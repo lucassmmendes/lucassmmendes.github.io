@@ -172,7 +172,7 @@
       padding: 0 32px;
     }
 
-    /* Painel de controles - POSICIONADO ACIMA DO VLIBRAS */
+    /* Painel de controles */
     .controls-panel {
       position: fixed;
       bottom: 90px;
@@ -396,243 +396,6 @@
       margin-bottom: 18px;
     }
     .manifesto-box p { color: var(--text-secondary); font-size: 16px; line-height: 1.7; }
-
-    /* ÁREAS DE ATUAÇÃO - COM SELECT DROPDOWN */
-    .area-selector {
-      background: var(--bg-secondary);
-      border-radius: 20px;
-      padding: 24px;
-      margin-bottom: 30px;
-      border: 1px solid var(--line);
-    }
-    
-    .area-selector label {
-      display: block;
-      margin-bottom: 12px;
-      font-weight: 600;
-      color: var(--primary);
-      font-size: 14px;
-    }
-    
-    .area-selector select {
-      width: 100%;
-      padding: 16px 20px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      color: var(--text);
-      font-family: inherit;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    
-    .area-selector select:hover, 
-    .area-selector select:focus {
-      border-color: var(--primary);
-      outline: none;
-    }
-    
-    .especificidade-selector {
-      background: var(--bg-secondary);
-      border-radius: 20px;
-      padding: 24px;
-      margin-bottom: 30px;
-      border: 1px solid var(--line);
-    }
-    
-    .especificidade-selector label {
-      display: block;
-      margin-bottom: 12px;
-      font-weight: 600;
-      color: var(--primary);
-      font-size: 14px;
-    }
-    
-    .especificidade-selector select {
-      width: 100%;
-      padding: 16px 20px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      color: var(--text);
-      font-family: inherit;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    /* FORMULÁRIO INTEGRADO */
-    .formulario-integrado {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 40px;
-      margin-top: 20px;
-    }
-    
-    .formulario-integrado h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      margin-bottom: 8px;
-      color: var(--primary);
-    }
-    
-    .form-group {
-      margin-bottom: 20px;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: 500;
-      color: var(--text);
-    }
-    
-    .form-group label .obrigatorio {
-      color: #ff6b6b;
-      margin-left: 4px;
-    }
-    
-    .form-group input, 
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px 18px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      color: var(--text);
-      font-family: inherit;
-      font-size: 14px;
-    }
-    
-    .form-group input:focus, 
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-    
-    /* WhatsApp toggle */
-    .whatsapp-toggle {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 16px;
-      background: var(--bg-secondary);
-      border-radius: 12px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-    
-    .whatsapp-toggle input {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-    }
-    
-    .whatsapp-toggle label {
-      cursor: pointer;
-      font-weight: 500;
-    }
-    
-    .whatsapp-field {
-      margin-top: 12px;
-      margin-bottom: 20px;
-      display: none;
-    }
-    
-    .whatsapp-field.show {
-      display: block;
-    }
-    
-    /* Meio de contato preferido */
-    .contato-preferencia {
-      margin-bottom: 20px;
-    }
-    
-    .contato-preferencia select {
-      width: 100%;
-      padding: 14px 18px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      color: var(--text);
-      font-family: inherit;
-      font-size: 14px;
-      cursor: pointer;
-    }
-    
-    .contato-preferencia select:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-    
-    .urgente-checkbox {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 16px;
-      background: rgba(255, 0, 0, 0.1);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 0, 0, 0.3);
-      margin-bottom: 20px;
-    }
-    
-    .urgente-checkbox input {
-      width: 20px;
-      height: 20px;
-      cursor: pointer;
-    }
-    
-    .urgente-checkbox label {
-      margin: 0;
-      color: #ff6b6b;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    
-    .email-copy {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 20px 0;
-      flex-wrap: wrap;
-    }
-    
-    .email-copy input {
-      flex: 1;
-      padding: 12px 16px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      color: var(--text);
-    }
-    
-    .resumo-box {
-      background: var(--bg-secondary);
-      border-radius: 16px;
-      padding: 20px;
-      margin: 20px 0;
-      border-left: 4px solid var(--primary);
-      display: none;
-    }
-    
-    .prazo-info {
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 16px;
-      padding: 12px;
-      background: rgba(107,122,104,0.1);
-      border-radius: 12px;
-      text-align: center;
-    }
-    
-    .prazo-info.urgente-prazo {
-      background: rgba(255, 107, 107, 0.15);
-      color: #ff6b6b;
-    }
 
     /* Links úteis */
     .links-uteis-grid {
@@ -869,7 +632,6 @@
     }
     .canal-card:hover { transform: translateY(-4px); border-color: var(--secondary); }
     
-    /* Ícones padronizados: todos com 48x48px e centralizados */
     .icon-standard {
       width: 48px;
       height: 48px;
@@ -1043,7 +805,305 @@
     .lgpd-btn-policy { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
     .lgpd-btn-policy:hover { background: var(--primary); color: white; }
 
-    /* Ajuste responsivo */
+    /* ========== ESTILOS DO FORMULÁRIO DE ATENDIMENTO ========== */
+    .assunto-selector,
+    .especificidade-selector {
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 24px;
+      border: 1px solid var(--line);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .assunto-selector:focus-within,
+    .especificidade-selector:focus-within {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(107, 122, 104, 0.1);
+    }
+
+    .selector-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .selector-step {
+      background: var(--primary-dark);
+      color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .selector-header div {
+      flex: 1;
+    }
+
+    .selector-header label {
+      display: block;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .selector-help {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .assunto-selector select,
+    .especificidade-selector select {
+      width: 100%;
+      padding: 14px 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 8px;
+    }
+
+    .assunto-selector select:hover,
+    .especificidade-selector select:hover,
+    .assunto-selector select:focus,
+    .especificidade-selector select:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    .formulario-integrado {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 32px;
+      margin-top: 8px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .form-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .form-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .form-group label .obrigatorio {
+      color: #ff6b6b;
+      margin-left: 4px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(107, 122, 104, 0.15);
+    }
+
+    .whatsapp-toggle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      margin-bottom: 20px;
+      border: 1px solid var(--line);
+    }
+
+    .whatsapp-toggle input {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: var(--primary);
+    }
+
+    .whatsapp-toggle label {
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .whatsapp-field {
+      margin-bottom: 20px;
+      display: none;
+    }
+
+    .whatsapp-field.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .urgente-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: rgba(255, 107, 107, 0.08);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 107, 107, 0.3);
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .urgente-checkbox input {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: #ff6b6b;
+    }
+
+    .urgente-checkbox label {
+      margin: 0;
+      color: #ff6b6b;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .urgente-checkbox small {
+      color: var(--muted);
+      font-size: 11px;
+      margin-left: auto;
+    }
+
+    .email-copy {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .email-copy input {
+      flex: 1;
+      padding: 10px 14px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 13px;
+    }
+
+    .resumo-box {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 4px solid var(--primary);
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .resumo-box p {
+      margin: 0 0 8px 0;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      width: 100%;
+      padding: 14px 24px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 16px;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 12px rgba(107, 122, 104, 0.3);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+      box-shadow: 0 6px 18px rgba(107, 122, 104, 0.4);
+    }
+
+    .prazo-info {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 16px;
+      padding: 10px;
+      background: rgba(107, 122, 104, 0.06);
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .prazo-info.urgente-prazo {
+      background: rgba(255, 107, 107, 0.1);
+      color: #ff6b6b;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsividade */
     @media (max-width: 1200px) {
       .container { padding: 0 28px; }
       .hero h1, .hero h1 .linha1, .hero h1 .linha2 { font-size: 60px; }
@@ -1070,7 +1130,6 @@
       .canal-card { width: 100%; max-width: 300px; }
       .hero-image img { max-width: 80%; margin: 0 auto; }
       .formulario-integrado { padding: 24px; }
-      .formulario-integrado h3 { font-size: 24px; }
     }
     @media (max-width: 680px) {
       .container { padding: 0 20px; }
@@ -1100,11 +1159,15 @@
       .competencias-grid { grid-template-columns: 1fr; }
       .competencia-item .tooltip { white-space: normal; width: 180px; left: 50%; transform: translateX(-50%); }
       .lgpd-content { flex-direction: column; text-align: center; }
-      .area-selector select, 
-      .especificidade-selector select { font-size: 14px; padding: 12px 16px; }
       .controls-panel { bottom: 75px; right: 12px; }
       .controls-panel .theme-toggle, 
       .controls-panel .color-toggle { padding: 4px 8px; font-size: 12px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .form-group { margin-bottom: 16px; }
+      .selector-header { gap: 12px; }
+      .selector-step { width: 28px; height: 28px; font-size: 12px; }
+      .assunto-selector, .especificidade-selector, .formulario-integrado { padding: 18px; }
+      .urgente-checkbox small { margin-left: 0; width: 100%; }
     }
     @media (max-width: 480px) {
       .hero h1, .hero h1 .linha1, .hero h1 .linha2 { font-size: 32px; }
@@ -1112,6 +1175,7 @@
       .hero-image .overlay-tag { font-size: 8px; padding: 4px 10px; white-space: nowrap; bottom: 12px; }
       .item-year { min-width: 85px; }
       .controls-panel { bottom: 70px; right: 10px; }
+      .assunto-selector select, .especificidade-selector select { font-size: 13px; padding: 12px 14px; }
     }
   </style>
 </head>
@@ -1133,7 +1197,7 @@
   </div>
 </div>
 
-<!-- ========== BOTÃO FLUTUANTE COM DROPDOWN (WhatsApp e Ligação) - LADO ESQUERDO ========== -->
+<!-- ========== BOTÃO FLUTUANTE COM DROPDOWN (WhatsApp e Ligação) ========== -->
 <div class="float-contact">
   <div class="dropdown-menu" id="contactDropdown">
     <a href="https://wa.me/5531991528642?text=Ol%C3%A1%20Lucas%20Monteiro%20Mendes,%20gostaria%20de%20solicitar%20mais%20informa%C3%A7%C3%B5es." target="_blank" class="dropdown-item" rel="noopener noreferrer">
@@ -1150,7 +1214,7 @@
   </button>
 </div>
 
-<!-- Painel de controles de tema/cor - LADO DIREITO (acima do VLibras) -->
+<!-- Painel de controles -->
 <div class="controls-panel">
   <div class="theme-toggle">
     <span class="theme-option" data-theme="dark">🌙</span>
@@ -1168,7 +1232,7 @@
     <div class="menu-mobile" id="menuMobile">☰</div>
     <div class="nav-links" id="navLinks">
       <a href="#manifesto">Manifesto</a>
-      <a href="#atuacao">Atuação</a>
+      <a href="#atuacao">Atendimento</a>
       <a href="#curriculo">Currículo</a>
       <a href="#podcast">Podcast</a>
       <a href="#faq">Dúvidas</a>
@@ -1220,104 +1284,127 @@
     </div>
   </section>
 
-  <!-- ATUAÇÃO -->
-  <section id="atuacao">
+  <!-- ATENDIMENTO - SEÇÃO REFORMULADA -->
+  <section id="atuacao" style="padding: 60px 0;">
     <div class="container">
-      <div class="section-title">
-        <span>Áreas de atuação</span>
-        <h2>Estratégia jurídica com visão institucional e impacto público.</h2>
-        <p>Selecione sua área e especificidade para solicitar atendimento</p>
+      <div class="section-title" style="text-align: center; max-width: 700px; margin: 0 auto 48px auto;">
+        <span>Atendimento jurídico</span>
+        <h2>Conte sobre o seu caso</h2>
+        <p style="color: var(--text-secondary);">Selecione o assunto que melhor descreve sua situação. Isso nos ajuda a direcionar seu atendimento da melhor forma possível.</p>
       </div>
       
-      <div class="area-selector">
-        <label>📌 Selecione sua área de atuação <span class="obrigatorio">*</span></label>
-        <select id="areaSelect" required>
-          <option value="">-- Selecione uma área --</option>
-          <option value="administrativo">⚖️ Direito Administrativo</option>
-          <option value="constitucional">📜 Direito Constitucional</option>
-          <option value="criminal">🔒 Direito Criminal</option>
-          <option value="controle">🔍 Controle & Transparência</option>
-          <option value="civil">📋 Direito Civil</option>
-          <option value="familia">💑 Direito de Família</option>
-          <option value="trabalhista">🔧 Direito Trabalhista</option>
-          <option value="consumidor">🛍️ Direito do Consumidor</option>
-          <option value="transito">🚗 Direito de Trânsito</option>
-          <option value="sucessorio">📜 Direito Sucessório</option>
-          <option value="direitoshumanos">🏳️‍🌈 Direitos Humanos e Sociais</option>
-          <option value="outros">❓ Outros / Não encontrei o que procurava</option>
+      <!-- PASSO 1: QUAL O ASSUNTO? -->
+      <div class="assunto-selector">
+        <div class="selector-header">
+          <span class="selector-step">1</span>
+          <div>
+            <label>📌 Qual é o assunto do seu caso? <span class="obrigatorio">*</span></label>
+            <p class="selector-help">Escolha a categoria que mais se aproxima da sua situação</p>
+          </div>
+        </div>
+        <select id="assuntoSelect" required>
+          <option value="">-- Selecione o assunto --</option>
+          <option value="administrativo">🏛️ Problemas com órgãos públicos, licitações ou contratos administrativos</option>
+          <option value="constitucional">📜 Direitos fundamentais, mandado de segurança ou ações constitucionais</option>
+          <option value="criminal">🔒 Processo criminal, prisão, inquérito ou defesa criminal</option>
+          <option value="controle">🔍 Transparência, corrupção, acesso à informação ou controle público</option>
+          <option value="civil">📋 Contratos, indenizações, cobranças ou questões civis em geral</option>
+          <option value="familia">💑 Divórcio, pensão, guarda de filhos ou união estável</option>
+          <option value="trabalhista">🔧 Direitos trabalhistas, rescisão, horas extras ou assédio moral</option>
+          <option value="consumidor">🛍️ Problemas com produtos, serviços, cobranças indevidas ou superendividamento</option>
+          <option value="transito">🚗 Multas, suspensão da CNH, acidentes ou infrações de trânsito</option>
+          <option value="sucessorio">📜 Inventário, partilha de bens, testamento ou herança</option>
+          <option value="direitoshumanos">🏳️‍🌈 Discriminação, direitos LGBTI+, inclusão ou violação de direitos humanos</option>
+          <option value="outros">❓ Outro assunto - não encontrei o que procurava</option>
         </select>
       </div>
       
-      <div class="especificidade-selector" id="especificidadeContainer">
-        <label>📋 Selecione a especificidade <span class="obrigatorio">*</span></label>
+      <!-- PASSO 2: DETALHAMENTO (aparece após selecionar o assunto) -->
+      <div class="especificidade-selector" id="especificidadeContainer" style="display: none;">
+        <div class="selector-header">
+          <span class="selector-step">2</span>
+          <div>
+            <label>📋 Agora, detalhe melhor o seu caso <span class="obrigatorio">*</span></label>
+            <p class="selector-help">Isso ajuda a direcionar para a especialidade correta</p>
+          </div>
+        </div>
         <select id="especificidadeSelect" required>
-          <option value="">-- Selecione uma área primeiro --</option>
+          <option value="">-- Selecione um assunto primeiro --</option>
         </select>
       </div>
       
-      <!-- FORMULÁRIO INTEGRADO -->
-      <div class="formulario-integrado" id="formularioContato">
-        <h3>📝 Solicite seu atendimento</h3>
-        <p style="color: var(--muted); margin-bottom: 24px;">Preencha os dados abaixo para receber nosso contato</p>
+      <!-- PASSO 3: FORMULÁRIO (aparece após selecionar o detalhamento) -->
+      <div class="formulario-integrado" id="formularioContato" style="display: none;">
+        <div class="form-header">
+          <span class="selector-step" style="background: var(--primary);">3</span>
+          <div>
+            <h3>Seus dados para contato</h3>
+            <p style="color: var(--muted); font-size: 13px; margin-top: 4px;">Preencha para que possamos responder seu caso</p>
+          </div>
+        </div>
         
         <form id="solicitacaoForm">
-          <div class="form-group">
-            <label>Seu nome <span class="obrigatorio">*</span></label>
-            <input type="text" id="formNome" required placeholder="Digite seu nome completo">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Seu nome completo <span class="obrigatorio">*</span></label>
+              <input type="text" id="formNome" required placeholder="Como devemos te chamar?">
+            </div>
+            
+            <div class="form-group">
+              <label>Seu melhor e-mail <span class="obrigatorio">*</span></label>
+              <input type="email" id="formEmail" required placeholder="Para onde enviamos a resposta?">
+            </div>
           </div>
           
-          <div class="form-group">
-            <label>Seu e-mail <span class="obrigatorio">*</span></label>
-            <input type="email" id="formEmail" required placeholder="Digite seu melhor e-mail">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Seu telefone <span class="obrigatorio">*</span></label>
+              <input type="tel" id="formTelefone" required placeholder="(00) 00000-0000">
+            </div>
+            
+            <div class="form-group">
+              <label>Como prefere ser contatado? <span class="obrigatorio">*</span></label>
+              <select id="contatoPreferido" required>
+                <option value="WhatsApp">💬 WhatsApp (mais rápido)</option>
+                <option value="E-mail">📧 E-mail</option>
+                <option value="Ligação">📞 Ligação telefônica</option>
+              </select>
+            </div>
           </div>
           
-          <div class="form-group">
-            <label>Telefone <span class="obrigatorio">*</span></label>
-            <input type="tel" id="formTelefone" required placeholder="(00) 00000-0000">
-          </div>
-          
-          <!-- WhatsApp: mesmo número? -->
           <div class="whatsapp-toggle">
             <input type="checkbox" id="whatsappSameNumber" checked>
-            <label for="whatsappSameNumber">📱 Este número é o mesmo do WhatsApp</label>
+            <label for="whatsappSameNumber">📱 Este telefone também é WhatsApp</label>
           </div>
           
           <div id="whatsappField" class="whatsapp-field">
             <div class="form-group">
-              <label>Número do WhatsApp <span class="obrigatorio">*</span></label>
+              <label>Número do WhatsApp (diferente do telefone) <span class="obrigatorio">*</span></label>
               <input type="tel" id="formWhatsapp" placeholder="(00) 00000-0000">
             </div>
           </div>
           
-          <!-- Meio de contato preferido (padrão WhatsApp) -->
-          <div class="contato-preferencia">
-            <label>📞 Meio de contato preferido <span class="obrigatorio">*</span></label>
-            <select id="contatoPreferido" required>
-              <option value="WhatsApp">💬 WhatsApp</option>
-              <option value="E-mail">📧 E-mail</option>
-              <option value="Ligação">📞 Ligação telefônica</option>
-            </select>
-          </div>
-          
           <div class="form-group">
-            <label>Resumo da sua demanda <span class="obrigatorio">*</span></label>
-            <textarea id="formDemanda" rows="5" placeholder="Descreva resumidamente sua situação ou dúvida..." required></textarea>
+            <label>Descreva resumidamente sua situação <span class="obrigatorio">*</span></label>
+            <textarea id="formDemanda" rows="4" placeholder="Ex: Estou com um problema de divórcio e guarda dos filhos... ou Fui multado injustamente no trânsito..." required></textarea>
           </div>
           
           <div class="urgente-checkbox">
             <input type="checkbox" id="formUrgente">
-            <label for="formUrgente">🚨 URGENTE - Preciso de resposta em até 3h</label>
-            <small>(caso de emergência judicial)</small>
+            <label for="formUrgente">🚨 CASO URGENTE - Preciso de resposta em até 3h</label>
+            <small>(para situações que exigem ação judicial imediata)</small>
           </div>
           
           <div class="email-copy">
             <input type="email" id="emailCopia" placeholder="E-mail para receber cópia (opcional)">
-            <button type="button" id="btnEnviarCopia" class="btn-secondary" style="padding: 12px 20px;">📧 Enviar cópia</button>
+            <button type="button" id="btnEnviarCopia" class="btn-secondary" style="padding: 10px 18px;">📧 Enviar cópia para mim</button>
           </div>
           
           <div id="resumoEnvio" style="display: none;" class="resumo-box"></div>
           
-          <button type="submit" class="btn" style="width: 100%;">📨 Enviar solicitação</button>
+          <button type="submit" class="btn-submit">
+            <span>📨</span> Enviar minha solicitação
+          </button>
           
           <div id="prazoInfo" class="prazo-info">
             ⏱️ Solicitações normais: resposta em até 24h úteis
@@ -1441,7 +1528,7 @@
     </div>
   </section>
 
-  <!-- CONTATO PRINCIPAL com todas as redes e ícones padronizados -->
+  <!-- CONTATO PRINCIPAL -->
   <section class="contato-principal" id="contato-principal">
     <div class="container">
       <h2>Entre em contato</h2>
@@ -1510,7 +1597,7 @@
         <p style="margin-top:8px; color:var(--muted); font-size:11px;">OAB/MG 207.091</p>
       </div>
       <div class="footer-links">
-        <div><h4 style="font-size:12px; margin-bottom:10px;">Institucional</h4><a href="#manifesto">Sobre</a><a href="#atuacao">Atuação</a><a href="#contato-principal">Contato</a></div>
+        <div><h4 style="font-size:12px; margin-bottom:10px;">Institucional</h4><a href="#manifesto">Sobre</a><a href="#atuacao">Atendimento</a><a href="#contato-principal">Contato</a></div>
         <div><h4 style="font-size:12px; margin-bottom:10px;">Conteúdo</h4><a href="#podcast">Podcast</a><a href="#curriculo">Currículo</a><a href="#faq">Dúvidas</a></div>
         <div><h4 style="font-size:12px; margin-bottom:10px;">Links úteis</h4><a href="https://www.oabmg.org.br/" target="_blank" rel="noopener noreferrer">OAB/MG</a><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer">LGPD</a></div>
         <div><h4 style="font-size:12px; margin-bottom:10px;">Atendimento</h4><span style="font-size:11px; color:var(--muted);">BH e Região Metropolitana</span><span style="font-size:11px; color:var(--muted); display: block; margin-top: 4px;">Atendimento online em todo Brasil</span></div>
@@ -1523,7 +1610,7 @@
   </div>
 </footer>
 
-<!-- ========== VLIBRAS WIDGET (ÍCONE OFICIAL DAS DUAS MÃOS AZUIS) ========== -->
+<!-- ========== VLIBRAS WIDGET ========== -->
 <div vw class="enabled">
   <div vw-access-button class="active"></div>
   <div vw-plugin-wrapper>
@@ -1543,274 +1630,299 @@
   const ehQuarta = (hoje === 3);
   
   // ============================================================
-  // Dados das especificidades por área
+  // Dados das especificidades por assunto
   // ============================================================
-  const especificidadesPorArea = {
-    "administrativo": ["Licitações e Contratos", "Concessões e PPPs", "Saneamento de Irregularidades", "Consultoria Estratégica", "Processo Administrativo (PAD)", "Responsabilidade Civil do Estado", "Improbidade Administrativa", "Serviços Públicos"],
-    "constitucional": ["Controle de Constitucionalidade", "Mandado de Segurança", "ADI", "ADPF", "Defesa de Direitos Fundamentais", "Ação Civil Pública", "Direitos Difusos"],
-    "criminal": ["Prisão em Flagrante", "Habeas Corpus", "Inquéritos Policiais", "Tribunal do Júri", "Crimes de Trânsito", "Lei Maria da Penha", "Crimes Cibernéticos", "Execução Penal", "Recursos Criminais", "Colaboração Premiada"],
-    "controle": ["Controle Externo", "Controle Interno", "Compliance Público", "Ouvidorias", "Acesso à Informação (LAI)", "Integridade Pública", "Prevenção à Corrupção", "Governança Pública"],
-    "civil": ["Contratos", "Responsabilidade Civil", "Cobranças e Execuções", "Locações", "Usucapião", "Obrigações", "Restauração de Autos"],
-    "familia": ["Divórcio", "Guarda de Filhos", "Pensão Alimentícia", "União Estável", "Inventário", "Reconhecimento de Paternidade", "Adoção", "Curatela"],
-    "trabalhista": ["Reclamação Trabalhista", "Rescisão e Justa Causa", "Horas Extras", "Assédio Moral", "Acidente de Trabalho", "Equiparação Salarial", "Recursos Trabalhistas"],
-    "consumidor": ["Cobranças Indevidas", "Vícios de Produtos", "Revisão de Contratos", "Superendividamento", "Práticas Abusivas", "Indenizações"],
-    "transito": ["Defesa de Multas", "Suspensão da CNH", "Cassação da CNH", "Ações Anulatórias", "Defesa Criminal de Trânsito", "Recursos Administrativos"],
-    "sucessorio": ["Inventário Judicial", "Inventário Extrajudicial", "Partilha de Bens", "Testamento", "Planejamento Sucessório", "Petição de Herança"],
-    "direitoshumanos": ["Assessoria Jurídica Institucional - Associação LGBTI+ de Betim", "Direitos da População LGBTI+", "Igualdade Racial e Combate ao Racismo", "Direitos da Mulher e Combate à Violência de Gênero", "Inclusão de Pessoas com Deficiência", "Direitos de Refugiados e Migrantes", "Combate à LGBTfobia e Discriminação", "Ações Afirmativas e Políticas de Inclusão", "Proteção de Grupos Vulneráveis", "Direitos Humanos nas Empresas (DH-E)", "Litígio Estratégico em Direitos Humanos"],
-    "outros": ["Outra área - especifique na demanda", "Não sei identificar", "Assunto não listado", "Dúvida geral", "Outros assuntos jurídicos"]
+  const especificidadesPorAssunto = {
+    "administrativo": ["Licitações e Contratos Públicos", "Concessões e Parcerias Público-Privadas", "Saneamento de Irregularidades", "Consultoria Estratégica", "Processo Administrativo Disciplinar (PAD)", "Responsabilidade Civil do Estado", "Improbidade Administrativa", "Serviços Públicos", "Bens Públicos"],
+    "constitucional": ["Controle de Constitucionalidade", "Mandado de Segurança", "Ação Direta de Inconstitucionalidade (ADI)", "Arguição de Descumprimento de Preceito Fundamental (ADPF)", "Defesa de Direitos Fundamentais", "Ação Civil Pública", "Direitos Difusos e Coletivos"],
+    "criminal": ["Prisão em Flagrante", "Habeas Corpus", "Inquéritos Policiais", "Tribunal do Júri", "Crimes de Trânsito", "Lei Maria da Penha", "Crimes Cibernéticos", "Execução Penal", "Recursos Criminais", "Colaboração Premiada", "Defesa em Processo Criminal"],
+    "controle": ["Controle Externo (Tribunais de Contas)", "Controle Interno", "Compliance Público", "Ouvidorias", "Acesso à Informação (LAI)", "Integridade Pública", "Prevenção à Corrupção", "Governança Pública"],
+    "civil": ["Contratos em geral", "Responsabilidade Civil (indenizações)", "Cobranças e Execuções Judiciais", "Locações (aluguel)", "Usucapião", "Obrigações", "Restauração de Autos", "Direito de Vizinhança"],
+    "familia": ["Divórcio Consensual e Litigioso", "Guarda de Filhos", "Pensão Alimentícia", "União Estável", "Inventário e Partilha de Bens", "Reconhecimento de Paternidade", "Adoção", "Curatela e Interdição", "Alienação Parental"],
+    "trabalhista": ["Reclamação Trabalhista", "Rescisão de Contrato e Justa Causa", "Horas Extras e Adicionais", "Assédio Moral no Trabalho", "Acidente de Trabalho", "Equiparação Salarial", "Recursos Trabalhistas", "Trabalho Análogo à Escravidão"],
+    "consumidor": ["Cobranças Indevidas", "Vícios de Produtos e Serviços", "Revisão de Contratos Bancários", "Superendividamento", "Práticas Abusivas", "Indenizações por Danos", "Negativação Indevida (SPC/SERASA)"],
+    "transito": ["Defesa de Multas de Trânsito", "Suspensão do Direito de Dirigir (CNH)", "Cassação da CNH", "Ações Anulatórias de Multas", "Defesa Criminal de Trânsito", "Recursos Administrativos (JARI, CETRAN)"],
+    "sucessorio": ["Inventário Judicial", "Inventário Extrajudicial (Cartório)", "Partilha de Bens", "Testamento Público e Particular", "Planejamento Sucessório", "Petição de Herança", "Abertura de Sucessão"],
+    "direitoshumanos": ["Assessoria Jurídica - Associação LGBTI+ de Betim", "Direitos da População LGBTI+", "Igualdade Racial e Combate ao Racismo", "Direitos da Mulher e Violência de Gênero", "Inclusão de Pessoas com Deficiência", "Direitos de Refugiados e Migrantes", "Combate à LGBTfobia", "Ações Afirmativas", "Proteção de Grupos Vulneráveis", "Direitos Humanos nas Empresas"],
+    "outros": ["Outra área - vou descrever na demanda", "Não sei identificar o assunto", "Assunto não listado", "Dúvida geral sobre direitos", "Outros assuntos jurídicos"]
   };
 
   // ============================================================
-  // FUNÇÕES DO SITE
+  // ELEMENTOS DO DOM
   // ============================================================
-  
-  // LGPD Modal
-  function initLgpd() {
-    const modal = document.getElementById('lgpdModal');
-    const acceptBtn = document.getElementById('acceptLgpd');
-    const policyBtn = document.getElementById('policyBtn');
-    const lgpdAccepted = localStorage.getItem('lgpd_accepted');
-    if (!lgpdAccepted) setTimeout(() => modal.classList.add('show'), 1000);
-    acceptBtn.addEventListener('click', () => { localStorage.setItem('lgpd_accepted', 'true'); modal.classList.remove('show'); });
-    function openPrivacyPolicy() {
-      const privacyHtml = `<div style="position: fixed; top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;" id="privacyModal"><div style="background:var(--card);border-radius:20px;max-width:600px;max-height:80vh;overflow-y:auto;padding:30px;"><h2 style="color:var(--primary);margin-bottom:20px;">Política de Privacidade</h2><p style="margin-bottom:15px;color:var(--muted);">Em conformidade com a LGPD (Lei 13.709/2018) e o Código de Ética da OAB:</p><ul style="color:var(--muted);margin-bottom:20px;padding-left:20px;"><li>Coletamos apenas dados fornecidos voluntariamente (nome, e-mail, telefone);</li><li>Os dados são utilizados exclusivamente para atendimento e retorno de contato;</li><li>Não compartilhamos dados com terceiros sem consentimento explícito;</li><li>Você pode solicitar exclusão dos dados a qualquer momento;</li><li>Cookies são utilizados apenas para funcionalidades essenciais.</li></ul><button onclick="document.getElementById('privacyModal').remove()" style="background:var(--primary);color:white;border:none;padding:10px 20px;border-radius:40px;cursor:pointer;">Fechar</button></div></div>`;
-      document.body.insertAdjacentHTML('beforeend', privacyHtml);
-    }
-    policyBtn.addEventListener('click', openPrivacyPolicy);
-  }
-
-  // Tema claro/escuro (com regra para quarta-feira)
-  const themeOptions = document.querySelectorAll('.theme-option');
-  const body = document.body;
-  
-  // Se for quarta-feira, força tema claro
-  if (ehQuarta) {
-    body.classList.add('light');
-    localStorage.setItem('theme', 'light');
-  } else {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    body.classList.toggle('light', savedTheme === 'light');
-  }
-  
-  function updateActiveTheme(theme) { themeOptions.forEach(opt => { const t = opt.getAttribute('data-theme'); if (t === theme) opt.classList.add('active'); else opt.classList.remove('active'); }); }
-  updateActiveTheme(body.classList.contains('light') ? 'light' : 'dark');
-  
-  themeOptions.forEach(option => { option.addEventListener('click', () => { const theme = option.getAttribute('data-theme'); if (theme === 'light') { body.classList.add('light'); localStorage.setItem('theme', 'light'); } else { body.classList.remove('light'); localStorage.setItem('theme', 'dark'); } updateActiveTheme(theme); }); });
-
-  // Cor do tema (com regra para quarta-feira)
-  const colorOptions = document.querySelectorAll('.color-option');
-  function updateActiveColor(color) { colorOptions.forEach(opt => { const c = opt.getAttribute('data-color'); if (c === color) opt.classList.add('active'); else opt.classList.remove('active'); }); }
-  function aplicarCor(color) { if (color === 'pink') body.classList.add('pink'); else body.classList.remove('pink'); updateActiveColor(color); localStorage.setItem('color', color); }
-  
-  // Se for quarta-feira, força cor rosa
-  if (ehQuarta) {
-    aplicarCor('pink');
-  } else {
-    const userSavedColor = localStorage.getItem('color');
-    if (userSavedColor) {
-      aplicarCor(userSavedColor);
-    } else {
-      aplicarCor('green');
-    }
-  }
-  
-  colorOptions.forEach(option => { option.addEventListener('click', () => { const color = option.getAttribute('data-color'); aplicarCor(color); }); });
-
-  // Menu mobile
-  const menuMobile = document.getElementById('menuMobile');
-  const navLinks = document.getElementById('navLinks');
-  if (menuMobile) menuMobile.addEventListener('click', () => navLinks.classList.toggle('active'));
-  document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { const href = this.getAttribute('href'); if (href === '#') return; const target = document.querySelector(href); if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); navLinks.classList.remove('active'); } }); });
-
-  // WhatsApp
-  const telefone = "5531991528642";
-  
-  // ============================================================
-  // ATUALIZAR ESPECIFICIDADES
-  // ============================================================
-  const areaSelect = document.getElementById('areaSelect');
+  const assuntoSelect = document.getElementById('assuntoSelect');
+  const especificidadeContainer = document.getElementById('especificidadeContainer');
   const especificidadeSelect = document.getElementById('especificidadeSelect');
-  
+  const formularioContato = document.getElementById('formularioContato');
+
+  // ============================================================
+  // FUNÇÃO PARA ATUALIZAR AS ESPECIFICIDADES
+  // ============================================================
   function atualizarEspecificidades() {
-    const areaSelecionada = areaSelect.value;
+    const assuntoSelecionado = assuntoSelect.value;
     
-    if (!areaSelecionada) {
-      especificidadeSelect.innerHTML = '<option value="">-- Selecione uma área primeiro --</option>';
+    if (!assuntoSelecionado) {
+      especificidadeContainer.style.display = 'none';
+      formularioContato.style.display = 'none';
       especificidadeSelect.disabled = true;
       return;
     }
     
+    especificidadeContainer.style.display = 'block';
     especificidadeSelect.disabled = false;
-    const especs = especificidadesPorArea[areaSelecionada] || [];
     
-    especificidadeSelect.innerHTML = '<option value="">-- Selecione uma especificidade --</option>';
+    const especs = especificidadesPorAssunto[assuntoSelecionado] || [];
+    
+    especificidadeSelect.innerHTML = '<option value="">-- Selecione o detalhamento do seu caso --</option>';
     especs.forEach(esp => {
       especificidadeSelect.innerHTML += `<option value="${esp}">${esp}</option>`;
     });
+    
+    especificidadeSelect.value = '';
+    formularioContato.style.display = 'none';
   }
-  
-  areaSelect.addEventListener('change', atualizarEspecificidades);
-  
-  // Inicializar especificidades
-  atualizarEspecificidades();
-  
+
+  // ============================================================
+  // FUNÇÃO PARA MOSTRAR O FORMULÁRIO
+  // ============================================================
+  function verificarMostrarFormulario() {
+    const assuntoValido = assuntoSelect.value && assuntoSelect.value !== '';
+    const especificidadeValida = especificidadeSelect.value && especificidadeSelect.value !== '';
+    
+    if (assuntoValido && especificidadeValida) {
+      formularioContato.style.display = 'block';
+      setTimeout(() => {
+        formularioContato.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    } else {
+      formularioContato.style.display = 'none';
+    }
+  }
+
+  // ============================================================
+  // EVENT LISTENERS
+  // ============================================================
+  assuntoSelect.addEventListener('change', atualizarEspecificidades);
+  especificidadeSelect.addEventListener('change', verificarMostrarFormulario);
+
+  // ============================================================
+  // TEMA E COR
+  // ============================================================
+  const themeOptions = document.querySelectorAll('.theme-option');
+  const colorOptions = document.querySelectorAll('.color-option');
+  const body = document.body;
+
+  if (ehQuarta) {
+    body.classList.add('light');
+    localStorage.setItem('theme', 'light');
+    body.classList.add('pink');
+    localStorage.setItem('color', 'pink');
+    document.querySelector('.color-option[data-color="pink"]')?.classList.add('active');
+  } else {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    body.classList.toggle('light', savedTheme === 'light');
+    const savedColor = localStorage.getItem('color') || 'green';
+    if (savedColor === 'pink') body.classList.add('pink');
+    document.querySelector(`.color-option[data-color="${savedColor}"]`)?.classList.add('active');
+  }
+  document.querySelector(`.theme-option[data-theme="${body.classList.contains('light') ? 'light' : 'dark'}"]`)?.classList.add('active');
+
+  themeOptions.forEach(opt => {
+    opt.addEventListener('click', () => {
+      const theme = opt.getAttribute('data-theme');
+      if (theme === 'light') {
+        body.classList.add('light');
+        localStorage.setItem('theme', 'light');
+      } else {
+        body.classList.remove('light');
+        localStorage.setItem('theme', 'dark');
+      }
+      themeOptions.forEach(o => o.classList.remove('active'));
+      opt.classList.add('active');
+    });
+  });
+
+  colorOptions.forEach(opt => {
+    opt.addEventListener('click', () => {
+      const color = opt.getAttribute('data-color');
+      if (color === 'pink') {
+        body.classList.add('pink');
+      } else {
+        body.classList.remove('pink');
+      }
+      colorOptions.forEach(o => o.classList.remove('active'));
+      opt.classList.add('active');
+      localStorage.setItem('color', color);
+    });
+  });
+
+  // ============================================================
+  // MENU MOBILE
+  // ============================================================
+  const menuMobile = document.getElementById('menuMobile');
+  const navLinks = document.getElementById('navLinks');
+  if (menuMobile) {
+    menuMobile.addEventListener('click', () => navLinks.classList.toggle('active'));
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('active')));
+  }
+
   // ============================================================
   // WHATSAPP TOGGLE
   // ============================================================
   const whatsappSameNumber = document.getElementById('whatsappSameNumber');
   const whatsappField = document.getElementById('whatsappField');
   const formWhatsapp = document.getElementById('formWhatsapp');
-  
-  whatsappSameNumber.addEventListener('change', () => {
-    if (whatsappSameNumber.checked) {
-      whatsappField.classList.remove('show');
-      formWhatsapp.required = false;
-    } else {
-      whatsappField.classList.add('show');
-      formWhatsapp.required = true;
-    }
-  });
-  
+
+  if (whatsappSameNumber) {
+    whatsappSameNumber.addEventListener('change', () => {
+      if (whatsappSameNumber.checked) {
+        whatsappField.classList.remove('show');
+        if (formWhatsapp) formWhatsapp.required = false;
+      } else {
+        whatsappField.classList.add('show');
+        if (formWhatsapp) formWhatsapp.required = true;
+      }
+    });
+  }
+
   // ============================================================
-  // FORMULÁRIO DE SOLICITAÇÃO - ENVIA PARA O WHATSAPP
+  // FORMULÁRIO
   // ============================================================
+  const telefone = "5531991528642";
   const form = document.getElementById('solicitacaoForm');
   const resumoEnvio = document.getElementById('resumoEnvio');
   const prazoInfo = document.getElementById('prazoInfo');
   const formUrgente = document.getElementById('formUrgente');
-  
-  formUrgente.addEventListener('change', () => {
-    if (formUrgente.checked) {
-      prazoInfo.innerHTML = '🚨 ATENDIMENTO URGENTE - Resposta em até 3h (prioridade máxima)';
-      prazoInfo.classList.add('urgente-prazo');
-    } else {
-      prazoInfo.innerHTML = '⏱️ Solicitações normais: resposta em até 24h úteis';
-      prazoInfo.classList.remove('urgente-prazo');
-    }
-  });
-  
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const nome = document.getElementById('formNome').value;
-    const email = document.getElementById('formEmail').value;
-    const telefoneVal = document.getElementById('formTelefone').value;
-    const whatsappVal = whatsappSameNumber.checked ? telefoneVal : formWhatsapp.value;
-    const contatoPreferido = document.getElementById('contatoPreferido').value;
-    const area = areaSelect.options[areaSelect.selectedIndex]?.text || 'Não informado';
-    const especificidade = especificidadeSelect.options[especificidadeSelect.selectedIndex]?.text || 'Não informado';
-    const demanda = document.getElementById('formDemanda').value;
-    const urgente = formUrgente.checked;
-    
-    // Validações
-    if (!nome || !email || !telefoneVal || !areaSelect.value || !especificidadeSelect.value || !demanda) {
-      alert('Por favor, preencha todos os campos obrigatórios: Nome, E-mail, Telefone, Área, Especificidade e Resumo da Demanda.');
-      return;
-    }
-    
-    // Construir mensagem para WhatsApp
-    const mensagem = `*NOVA SOLICITAÇÃO DE ATENDIMENTO*%0A%0A` +
-      `*Nome:* ${nome}%0A` +
-      `*E-mail:* ${email}%0A` +
-      `*Telefone:* ${telefoneVal}%0A` +
-      `*WhatsApp:* ${whatsappVal}%0A` +
-      `*Contato preferido:* ${contatoPreferido}%0A` +
-      `*Área:* ${area}%0A` +
-      `*Especificidade:* ${especificidade}%0A` +
-      `*Urgente:* ${urgente ? '🚨 SIM (prioridade 3h)' : 'Não'}%0A%0A` +
-      `*Demanda:*%0A${demanda}%0A%0A` +
-      `---%0AEnviado pelo site lucasmonteiromendes.com.br`;
-    
-    // Abrir WhatsApp com a mensagem
-    window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
-    
-    // Mostrar resumo de confirmação
-    const prazoResposta = urgente ? 'até 3 horas' : 'até 24 horas úteis';
-    
-    resumoEnvio.innerHTML = `
-      <p><strong>✅ Solicitação enviada com sucesso!</strong></p>
-      <p>Uma conversa foi aberta no WhatsApp com o resumo da sua solicitação.</p>
-      <p><strong>Prazo de resposta:</strong> ${prazoResposta}</p>
-      <p style="margin-top:12px; font-size:12px;">📌 Guarde este protocolo ou aguarde nosso contato.</p>
-    `;
-    resumoEnvio.style.display = 'block';
-    
-    // Reset do formulário
-    form.reset();
-    whatsappSameNumber.checked = true;
-    whatsappField.classList.remove('show');
-    areaSelect.value = '';
-    atualizarEspecificidades();
-    prazoInfo.innerHTML = '⏱️ Solicitações normais: resposta em até 24h úteis';
-    prazoInfo.classList.remove('urgente-prazo');
-    
-    resumoEnvio.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    
-    setTimeout(() => {
-      resumoEnvio.style.display = 'none';
-    }, 8000);
-  });
-  
-  document.getElementById('btnEnviarCopia').addEventListener('click', () => {
-    const emailCopia = document.getElementById('emailCopia').value;
-    if (emailCopia && emailCopia.includes('@')) {
-      alert(`📧 Cópia da solicitação enviada para ${emailCopia}`);
-      document.getElementById('emailCopia').value = '';
-    } else {
-      alert('Digite um e-mail válido para receber a cópia');
-    }
-  });
+
+  if (formUrgente) {
+    formUrgente.addEventListener('change', () => {
+      if (formUrgente.checked) {
+        prazoInfo.innerHTML = '🚨 ATENDIMENTO URGENTE - Resposta em até 3h (prioridade máxima)';
+        prazoInfo.classList.add('urgente-prazo');
+      } else {
+        prazoInfo.innerHTML = '⏱️ Solicitações normais: resposta em até 24h úteis';
+        prazoInfo.classList.remove('urgente-prazo');
+      }
+    });
+  }
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const nome = document.getElementById('formNome')?.value || '';
+      const email = document.getElementById('formEmail')?.value || '';
+      const telefoneVal = document.getElementById('formTelefone')?.value || '';
+      const whatsappVal = (whatsappSameNumber?.checked) ? telefoneVal : (formWhatsapp?.value || '');
+      const contatoPreferido = document.getElementById('contatoPreferido')?.value || 'WhatsApp';
+      const assunto = assuntoSelect.options[assuntoSelect.selectedIndex]?.text || 'Não informado';
+      const especificidade = especificidadeSelect.options[especificidadeSelect.selectedIndex]?.text || 'Não informado';
+      const demanda = document.getElementById('formDemanda')?.value || '';
+      const urgente = formUrgente?.checked || false;
+      
+      if (!nome || !email || !telefoneVal || !assuntoSelect.value || !especificidadeSelect.value || !demanda) {
+        alert('Por favor, preencha todos os campos obrigatórios.');
+        return;
+      }
+      
+      const mensagem = `*NOVA SOLICITAÇÃO DE ATENDIMENTO*%0A%0A` +
+        `*Nome:* ${nome}%0A` +
+        `*E-mail:* ${email}%0A` +
+        `*Telefone:* ${telefoneVal}%0A` +
+        `*WhatsApp:* ${whatsappVal}%0A` +
+        `*Contato preferido:* ${contatoPreferido}%0A` +
+        `*Assunto do caso:* ${assunto}%0A` +
+        `*Detalhamento:* ${especificidade}%0A` +
+        `*Urgente:* ${urgente ? '🚨 SIM' : 'Não'}%0A%0A` +
+        `*Descrição:*%0A${demanda}`;
+      
+      window.open(`https://wa.me/${telefone}?text=${mensagem}`, '_blank');
+      
+      if (resumoEnvio) {
+        resumoEnvio.innerHTML = `<p><strong>✅ Solicitação enviada!</strong></p><p>Resposta em ${urgente ? 'até 3h' : 'até 24h úteis'}</p>`;
+        resumoEnvio.style.display = 'block';
+        resumoEnvio.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => { resumoEnvio.style.display = 'none'; }, 5000);
+      }
+      
+      form.reset();
+      if (whatsappSameNumber) whatsappSameNumber.checked = true;
+      if (whatsappField) whatsappField.classList.remove('show');
+      assuntoSelect.value = '';
+      atualizarEspecificidades();
+    });
+  }
 
   // ============================================================
   // FAQ
   // ============================================================
   const faqDatabase = [
-    { intent: "Comercial", question: "Como são definidos os honorários advocatícios?", answer: "Os honorários são definidos em contrato, conforme parâmetros da OAB/MG, podendo ser por valor fixo ou percentual." },
-    { intent: "Comercial", question: "Qual o valor de uma consulta inicial?", answer: "A consulta inicial tem valor conforme Tabela da OAB/MG, podendo ser abatido dos honorários contratados." },
-    { intent: "Transacional", question: "Preciso de um advogado criminal urgente, o que faço?", answer: "Estou disponível para atendimento emergencial. Entre em contato pelo WhatsApp." },
-    { intent: "Transacional", question: "Posso ser preso hoje? Preciso de um advogado agora!", answer: "Acione-me imediatamente pelo WhatsApp. Atendo casos urgentes 24h." },
-    { intent: "Informacional", question: "Quais documentos preciso para uma consulta?", answer: "Os documentos variam conforme o caso. Em geral, RG, CPF, comprovante de residência." },
-    { intent: "Informacional", question: "Como funciona o sigilo profissional?", answer: "O sigilo profissional é garantido pelo Estatuto da OAB (Lei 8.906/94)." }
+    { intent: "Comercial", question: "Como são definidos os honorários advocatícios?", answer: "Os honorários são definidos em contrato, conforme parâmetros da OAB/MG." },
+    { intent: "Comercial", question: "Qual o valor de uma consulta inicial?", answer: "A consulta inicial tem valor conforme Tabela da OAB/MG." },
+    { intent: "Transacional", question: "Preciso de um advogado urgente, o que faço?", answer: "Estou disponível para atendimento emergencial. Entre em contato pelo WhatsApp." },
+    { intent: "Informacional", question: "Quais documentos preciso para uma consulta?", answer: "Em geral, RG, CPF e comprovante de residência." },
+    { intent: "Informacional", question: "Como funciona o sigilo profissional?", answer: "Garantido pelo Estatuto da OAB (Lei 8.906/94)." }
   ];
   
-  function renderFaq(filterIntent = "all") {
+  function renderFaq(filter = "all") {
     const container = document.getElementById('faq-container');
     if (!container) return;
-    let filteredData = faqDatabase;
-    if (filterIntent !== "all") filteredData = faqDatabase.filter(item => item.intent === filterIntent);
-    if (filteredData.length === 0) { container.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:40px;">Nenhuma pergunta encontrada.</div>`; return; }
-    let html = '';
-    filteredData.forEach((item, index) => { const itemId = `faq-item-${index}`; html += `<div class="faq-card" style="background:var(--card);border:1px solid var(--line);border-radius:20px;"><div class="faq-question" id="${itemId}-header" onclick="toggleFaq('${itemId}')" style="padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;border-bottom:1px solid var(--line);"><h3 style="font-size:16px;font-weight:600;color:var(--text);">${item.question}</h3><span class="faq-icon" style="font-size:20px;color:var(--primary);transition:transform 0.3s;">▼</span></div><div class="faq-answer" id="${itemId}-answer" style="max-height:0;padding:0 24px;overflow:hidden;transition:max-height 0.4s ease-out;background:var(--bg-secondary);"><p style="padding:20px 0;color:var(--muted);font-size:14px;">${item.answer}</p><div style="padding-bottom:24px;"><a href="https://wa.me/5531991528642?text=Olá%20Lucas!%20Vi%20a%20pergunta%20'${encodeURIComponent(item.question)}'%20no%20site." target="_blank" class="btn-whatsapp-faq" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;padding:8px 18px;border-radius:40px;font-size:13px;font-weight:600;">💬 Falar sobre esta dúvida</a></div></div></div>`; });
-    container.innerHTML = html;
+    const data = filter === "all" ? faqDatabase : faqDatabase.filter(i => i.intent === filter);
+    container.innerHTML = data.map((item, i) => `
+      <div class="faq-card" style="background:var(--card);border:1px solid var(--line);border-radius:20px;">
+        <div onclick="this.nextElementSibling.style.maxHeight = this.nextElementSibling.style.maxHeight ? '0px' : this.nextElementSibling.scrollHeight + 'px'" style="padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;">
+          <h3 style="font-size:16px;">${item.question}</h3><span style="color:var(--primary);">▼</span>
+        </div>
+        <div style="max-height:0;overflow:hidden;transition:0.3s;padding:0 24px;">
+          <p style="padding:0 0 20px 0;color:var(--muted);">${item.answer}</p>
+        </div>
+      </div>
+    `).join('');
   }
   
-  window.toggleFaq = function(itemId) { const answerDiv = document.getElementById(`${itemId}-answer`); const iconSpan = document.querySelector(`#${itemId}-header .faq-icon`); if (answerDiv.style.maxHeight && answerDiv.style.maxHeight !== '0px') { answerDiv.style.maxHeight = '0px'; if (iconSpan) iconSpan.style.transform = 'rotate(0deg)'; } else { document.querySelectorAll('.faq-answer').forEach(el => el.style.maxHeight = '0px'); document.querySelectorAll('.faq-icon').forEach(icon => icon.style.transform = 'rotate(0deg)'); answerDiv.style.maxHeight = answerDiv.scrollHeight + "px"; if (iconSpan) iconSpan.style.transform = 'rotate(180deg)'; } };
-  
-  function setupFilters() { const filterBtns = document.querySelectorAll('.faq-filter-btn'); if (!filterBtns.length) return; filterBtns.forEach(btn => { btn.addEventListener('click', () => { filterBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active'); renderFaq(btn.getAttribute('data-filter')); document.getElementById('faq').scrollIntoView({ behavior: 'smooth', block: 'start' }); }); }); }
-  
+  function setupFilters() {
+    document.querySelectorAll('.faq-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.faq-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderFaq(btn.dataset.filter);
+      });
+    });
+  }
+
   // ============================================================
-  // DROPDOWN DO BOTÃO FLUTUANTE
+  // BOTÃO FLUTUANTE
   // ============================================================
   const floatBtn = document.getElementById('floatContactBtn');
   const dropdown = document.getElementById('contactDropdown');
-  
-  function toggleDropdown(e) {
-    e.stopPropagation();
-    dropdown.classList.toggle('show');
+  if (floatBtn && dropdown) {
+    floatBtn.addEventListener('click', (e) => { e.stopPropagation(); dropdown.classList.toggle('show'); });
+    document.addEventListener('click', (e) => { if (!floatBtn.contains(e.target) && !dropdown.contains(e.target)) dropdown.classList.remove('show'); });
   }
-  
-  function closeDropdownOnClickOutside(e) {
-    if (!floatBtn.contains(e.target) && !dropdown.contains(e.target)) {
-      dropdown.classList.remove('show');
-    }
+
+  // ============================================================
+  // LGPD
+  // ============================================================
+  function initLgpd() {
+    const modal = document.getElementById('lgpdModal');
+    const acceptBtn = document.getElementById('acceptLgpd');
+    const policyBtn = document.getElementById('policyBtn');
+    if (!localStorage.getItem('lgpd_accepted')) setTimeout(() => modal?.classList.add('show'), 1000);
+    acceptBtn?.addEventListener('click', () => { localStorage.setItem('lgpd_accepted', 'true'); modal?.classList.remove('show'); });
+    policyBtn?.addEventListener('click', () => {
+      alert('Política de Privacidade: Seus dados são usados apenas para atendimento, conforme LGPD.');
+    });
   }
-  
-  floatBtn.addEventListener('click', toggleDropdown);
-  document.addEventListener('click', closeDropdownOnClickOutside);
-  
-  document.addEventListener('DOMContentLoaded', () => { renderFaq('all'); setupFilters(); initLgpd(); });
+
+  // ============================================================
+  // INICIALIZAÇÃO
+  // ============================================================
+  document.addEventListener('DOMContentLoaded', () => {
+    renderFaq('all');
+    setupFilters();
+    initLgpd();
+    atualizarEspecificidades();
+  });
 </script>
 </body>
 </html>
-```
