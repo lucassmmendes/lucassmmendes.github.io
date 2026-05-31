@@ -1,3 +1,15 @@
+Perfeito! Você quer algo mais minimalista e direto: apenas o **ícone oficial do VLibras** (as duas mãos azuis simbolizando Libras), sem o botão de texto "Acessibilidade" adicional que eu havia colocado.
+
+Vou ajustar o código:
+1. **Remover** o botão "Acessibilidade" com texto que eu adicionei
+2. **Manter apenas o VLibras Widget original** (que já tem o ícone das duas mãos azuis flutuante no canto inferior direito)
+3. **Ajustar o posicionamento** para ficar harmonioso com os controles de tema/cor
+
+Assim você terá apenas os elementos flutuantes:
+- **Lado esquerdo**: botão "Fale comigo" (WhatsApp/Ligação)
+- **Lado direito**: ícone oficial do VLibras (mãos azuis) + controles de tema/cor (🌙☀️ e 🌿🌸)
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -134,6 +146,26 @@
       --line: rgba(0, 0, 0, 0.06);
     }
 
+    /* ========== ESTILO PARA O LINK DE PULAR PARA O CONTEÚDO (SKIP LINK) ========== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 16px;
+      text-decoration: none;
+      font-weight: bold;
+      z-index: 10000;
+      transition: top 0.2s ease-in-out;
+      border-radius: 0 0 4px 0;
+    }
+    .skip-link:focus {
+      top: 0;
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+
     html { scroll-behavior: smooth; }
     body {
       background: var(--bg);
@@ -152,12 +184,12 @@
       padding: 0 32px;
     }
 
-    /* Painel de controles */
+    /* Painel de controles - POSICIONADO ACIMA DO VLIBRAS */
     .controls-panel {
       position: fixed;
-      bottom: 24px;
+      bottom: 90px;
       right: 24px;
-      z-index: 1000;
+      z-index: 1001;
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -986,7 +1018,7 @@
       background: var(--card);
       border-top: 2px solid var(--primary);
       padding: 20px;
-      z-index: 1002;
+      z-index: 1003;
       transform: translateY(100%);
       transition: transform 0.4s ease;
       box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
@@ -1023,12 +1055,12 @@
     .lgpd-btn-policy { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
     .lgpd-btn-policy:hover { background: var(--primary); color: white; }
 
-    /* Responsividade */
+    /* Ajuste responsivo */
     @media (max-width: 1200px) {
       .container { padding: 0 28px; }
       .hero h1, .hero h1 .linha1, .hero h1 .linha2 { font-size: 60px; }
       .section-title h2, .contato-principal h2 { font-size: 40px; }
-      .controls-panel { bottom: 16px; right: 16px; }
+      .controls-panel { bottom: 85px; right: 16px; }
     }
     @media (max-width: 1024px) {
       .hero h1, .hero h1 .linha1, .hero h1 .linha2 { font-size: 52px; }
@@ -1082,16 +1114,23 @@
       .lgpd-content { flex-direction: column; text-align: center; }
       .area-selector select, 
       .especificidade-selector select { font-size: 14px; padding: 12px 16px; }
+      .controls-panel { bottom: 75px; right: 12px; }
+      .controls-panel .theme-toggle, 
+      .controls-panel .color-toggle { padding: 4px 8px; font-size: 12px; }
     }
     @media (max-width: 480px) {
       .hero h1, .hero h1 .linha1, .hero h1 .linha2 { font-size: 32px; }
       .section-title h2, .contato-principal h2 { font-size: 28px; }
       .hero-image .overlay-tag { font-size: 8px; padding: 4px 10px; white-space: nowrap; bottom: 12px; }
       .item-year { min-width: 85px; }
+      .controls-panel { bottom: 70px; right: 10px; }
     }
   </style>
 </head>
 <body>
+
+<!-- ========== SKIP LINK (ÍNDICE) PARA ACESSIBILIDADE ========== -->
+<a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
 <!-- LGPD Modal -->
 <div id="lgpdModal" class="lgpd-modal">
@@ -1106,7 +1145,7 @@
   </div>
 </div>
 
-<!-- ========== BOTÃO FLUTUANTE COM DROPDOWN (apenas WhatsApp e Ligação) ========== -->
+<!-- ========== BOTÃO FLUTUANTE COM DROPDOWN (WhatsApp e Ligação) - LADO ESQUERDO ========== -->
 <div class="float-contact">
   <div class="dropdown-menu" id="contactDropdown">
     <a href="https://wa.me/5531991528642?text=Ol%C3%A1%20Lucas%20Monteiro%20Mendes,%20gostaria%20de%20solicitar%20mais%20informa%C3%A7%C3%B5es." target="_blank" class="dropdown-item" rel="noopener noreferrer">
@@ -1123,7 +1162,7 @@
   </button>
 </div>
 
-<!-- Painel de controles -->
+<!-- Painel de controles de tema/cor - LADO DIREITO (acima do VLibras) -->
 <div class="controls-panel">
   <div class="theme-toggle">
     <span class="theme-option" data-theme="dark">🌙</span>
@@ -1150,326 +1189,329 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="tag">⚖ Direito • Democracia • Cidadania</div>
-      <h1>
-        <span class="linha1">Direito com</span>
-        <span class="linha2">propósito.</span>
-      </h1>
-      <p>Justiça que informa. Conhecimento que transforma.<br>Advogado nas áreas cível, criminal, família, consumidor, trânsito, sucessões, trabalhista, direitos humanos e pública. Assessoria para Associação LGBTI+. MBA em Gestão Pública.</p>
-      <div class="hero-buttons">
-        <a href="https://wa.me/5531991528642?text=Ol%C3%A1%20Lucas%20Monteiro%20Mendes,%20gostaria%20de%20solicitar%20mais%20informa%C3%A7%C3%B5es." target="_blank" class="btn">💬 Agende sua consulta</a>
-        <a href="#podcast" class="btn-secondary">🎙 Ouvir podcast</a>
+<!-- CONTEÚDO PRINCIPAL -->
+<main id="main-content">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="tag">⚖ Direito • Democracia • Cidadania</div>
+        <h1>
+          <span class="linha1">Direito com</span>
+          <span class="linha2">propósito.</span>
+        </h1>
+        <p>Justiça que informa. Conhecimento que transforma.<br>Advogado nas áreas cível, criminal, família, consumidor, trânsito, sucessões, trabalhista, direitos humanos e pública. Assessoria para Associação LGBTI+. MBA em Gestão Pública.</p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/5531991528642?text=Ol%C3%A1%20Lucas%20Monteiro%20Mendes,%20gostaria%20de%20solicitar%20mais%20informa%C3%A7%C3%B5es." target="_blank" class="btn">💬 Agende sua consulta</a>
+          <a href="#podcast" class="btn-secondary">🎙 Ouvir podcast</a>
+        </div>
+        <div class="oab-info">
+          📜 OAB/MG 207.091 • Região Metropolitana de Belo Horizonte/MG
+        </div>
       </div>
-      <div class="oab-info">
-        📜 OAB/MG 207.091 • Região Metropolitana de Belo Horizonte/MG
+      <div class="hero-image">
+        <img id="advogadoFoto" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmsCys3cZJOq7J64IdHV1XLz_nMGaFM-iXjHLK7w8EfzPRqjImsQ2mKzrYJZtqeEJQ5lzfe25G_16PZrHUfZzedjInSepAgzKJ3O54lD3uxzUblR_2A4DRwUux82GEqFqQ4qP4Zvlbi_BHSlzdD-PUqnq3XzjuX7kiAnRP__N_WohiL6Xo5oUw0I9b7OAz/s1600/LucasPink.png" alt="Lucas Monteiro Mendes - Advogado OAB/MG 207.091">
+        <div class="overlay-tag">⚖ Advogado OAB/MG 207.091 — Lucas Monteiro Mendes</div>
       </div>
     </div>
-    <div class="hero-image">
-      <img id="advogadoFoto" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhmsCys3cZJOq7J64IdHV1XLz_nMGaFM-iXjHLK7w8EfzPRqjImsQ2mKzrYJZtqeEJQ5lzfe25G_16PZrHUfZzedjInSepAgzKJ3O54lD3uxzUblR_2A4DRwUux82GEqFqQ4qP4Zvlbi_BHSlzdD-PUqnq3XzjuX7kiAnRP__N_WohiL6Xo5oUw0I9b7OAz/s1600/LucasPink.png" alt="Lucas Monteiro Mendes - Advogado OAB/MG 207.091">
-      <div class="overlay-tag">⚖ Advogado OAB/MG 207.091 — Lucas Monteiro Mendes</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- MANIFESTO -->
-<section class="manifesto" id="manifesto">
-  <div class="container">
-    <div class="section-title">
-      <span>Manifesto</span>
-      <h2>Democratizar conhecimento é fortalecer cidadania.</h2>
+  <!-- MANIFESTO -->
+  <section class="manifesto" id="manifesto">
+    <div class="container">
+      <div class="section-title">
+        <span>Manifesto</span>
+        <h2>Democratizar conhecimento é fortalecer cidadania.</h2>
+      </div>
+      <div class="manifesto-box">
+        <h3>Direito que conecta. Conhecimento que transforma.</h3>
+        <p>O Direito não pode ser um muro de palavras difíceis. Ele precisa chegar até você - claro, humano e sem enrolação. Este site tem caráter meramente informativo e educativo, em conformidade com as disposições do Código de Ética e Disciplina da OAB.</p>
+        <p style="margin-top: 16px;">Sei que procurar ajuda é, muitas vezes, o último passo. Você não está sozinho. Aqui, você será ouvido, respeitado e acolhido. Mais do que processos, construo pontes entre você e a solução que tanto precisa.</p>
+        <p style="margin-top: 16px; font-size: 12px; color: var(--muted);">Informações sobre honorários mediante consulta direta, conforme normas da OAB.</p>
+      </div>
     </div>
-    <div class="manifesto-box">
-      <h3>Direito que conecta. Conhecimento que transforma.</h3>
-      <p>O Direito não pode ser um muro de palavras difíceis. Ele precisa chegar até você - claro, humano e sem enrolação. Este site tem caráter meramente informativo e educativo, em conformidade com as disposições do Código de Ética e Disciplina da OAB.</p>
-      <p style="margin-top: 16px;">Sei que procurar ajuda é, muitas vezes, o último passo. Você não está sozinho. Aqui, você será ouvido, respeitado e acolhido. Mais do que processos, construo pontes entre você e a solução que tanto precisa.</p>
-      <p style="margin-top: 16px; font-size: 12px; color: var(--muted);">Informações sobre honorários mediante consulta direta, conforme normas da OAB.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ATUAÇÃO -->
-<section id="atuacao">
-  <div class="container">
-    <div class="section-title">
-      <span>Áreas de atuação</span>
-      <h2>Estratégia jurídica com visão institucional e impacto público.</h2>
-      <p>Selecione sua área e especificidade para solicitar atendimento</p>
-    </div>
-    
-    <div class="area-selector">
-      <label>📌 Selecione sua área de atuação <span class="obrigatorio">*</span></label>
-      <select id="areaSelect" required>
-        <option value="">-- Selecione uma área --</option>
-        <option value="administrativo">⚖️ Direito Administrativo</option>
-        <option value="constitucional">📜 Direito Constitucional</option>
-        <option value="criminal">🔒 Direito Criminal</option>
-        <option value="controle">🔍 Controle & Transparência</option>
-        <option value="civil">📋 Direito Civil</option>
-        <option value="familia">💑 Direito de Família</option>
-        <option value="trabalhista">🔧 Direito Trabalhista</option>
-        <option value="consumidor">🛍️ Direito do Consumidor</option>
-        <option value="transito">🚗 Direito de Trânsito</option>
-        <option value="sucessorio">📜 Direito Sucessório</option>
-        <option value="direitoshumanos">🏳️‍🌈 Direitos Humanos e Sociais</option>
-        <option value="outros">❓ Outros / Não encontrei o que procurava</option>
-      </select>
-    </div>
-    
-    <div class="especificidade-selector" id="especificidadeContainer">
-      <label>📋 Selecione a especificidade <span class="obrigatorio">*</span></label>
-      <select id="especificidadeSelect" required>
-        <option value="">-- Selecione uma área primeiro --</option>
-      </select>
-    </div>
-    
-    <!-- FORMULÁRIO INTEGRADO -->
-    <div class="formulario-integrado" id="formularioContato">
-      <h3>📝 Solicite seu atendimento</h3>
-      <p style="color: var(--muted); margin-bottom: 24px;">Preencha os dados abaixo para receber nosso contato</p>
+  <!-- ATUAÇÃO -->
+  <section id="atuacao">
+    <div class="container">
+      <div class="section-title">
+        <span>Áreas de atuação</span>
+        <h2>Estratégia jurídica com visão institucional e impacto público.</h2>
+        <p>Selecione sua área e especificidade para solicitar atendimento</p>
+      </div>
       
-      <form id="solicitacaoForm">
-        <div class="form-group">
-          <label>Seu nome <span class="obrigatorio">*</span></label>
-          <input type="text" id="formNome" required placeholder="Digite seu nome completo">
-        </div>
+      <div class="area-selector">
+        <label>📌 Selecione sua área de atuação <span class="obrigatorio">*</span></label>
+        <select id="areaSelect" required>
+          <option value="">-- Selecione uma área --</option>
+          <option value="administrativo">⚖️ Direito Administrativo</option>
+          <option value="constitucional">📜 Direito Constitucional</option>
+          <option value="criminal">🔒 Direito Criminal</option>
+          <option value="controle">🔍 Controle & Transparência</option>
+          <option value="civil">📋 Direito Civil</option>
+          <option value="familia">💑 Direito de Família</option>
+          <option value="trabalhista">🔧 Direito Trabalhista</option>
+          <option value="consumidor">🛍️ Direito do Consumidor</option>
+          <option value="transito">🚗 Direito de Trânsito</option>
+          <option value="sucessorio">📜 Direito Sucessório</option>
+          <option value="direitoshumanos">🏳️‍🌈 Direitos Humanos e Sociais</option>
+          <option value="outros">❓ Outros / Não encontrei o que procurava</option>
+        </select>
+      </div>
+      
+      <div class="especificidade-selector" id="especificidadeContainer">
+        <label>📋 Selecione a especificidade <span class="obrigatorio">*</span></label>
+        <select id="especificidadeSelect" required>
+          <option value="">-- Selecione uma área primeiro --</option>
+        </select>
+      </div>
+      
+      <!-- FORMULÁRIO INTEGRADO -->
+      <div class="formulario-integrado" id="formularioContato">
+        <h3>📝 Solicite seu atendimento</h3>
+        <p style="color: var(--muted); margin-bottom: 24px;">Preencha os dados abaixo para receber nosso contato</p>
         
-        <div class="form-group">
-          <label>Seu e-mail <span class="obrigatorio">*</span></label>
-          <input type="email" id="formEmail" required placeholder="Digite seu melhor e-mail">
-        </div>
-        
-        <div class="form-group">
-          <label>Telefone <span class="obrigatorio">*</span></label>
-          <input type="tel" id="formTelefone" required placeholder="(00) 00000-0000">
-        </div>
-        
-        <!-- WhatsApp: mesmo número? -->
-        <div class="whatsapp-toggle">
-          <input type="checkbox" id="whatsappSameNumber" checked>
-          <label for="whatsappSameNumber">📱 Este número é o mesmo do WhatsApp</label>
-        </div>
-        
-        <div id="whatsappField" class="whatsapp-field">
+        <form id="solicitacaoForm">
           <div class="form-group">
-            <label>Número do WhatsApp <span class="obrigatorio">*</span></label>
-            <input type="tel" id="formWhatsapp" placeholder="(00) 00000-0000">
+            <label>Seu nome <span class="obrigatorio">*</span></label>
+            <input type="text" id="formNome" required placeholder="Digite seu nome completo">
+          </div>
+          
+          <div class="form-group">
+            <label>Seu e-mail <span class="obrigatorio">*</span></label>
+            <input type="email" id="formEmail" required placeholder="Digite seu melhor e-mail">
+          </div>
+          
+          <div class="form-group">
+            <label>Telefone <span class="obrigatorio">*</span></label>
+            <input type="tel" id="formTelefone" required placeholder="(00) 00000-0000">
+          </div>
+          
+          <!-- WhatsApp: mesmo número? -->
+          <div class="whatsapp-toggle">
+            <input type="checkbox" id="whatsappSameNumber" checked>
+            <label for="whatsappSameNumber">📱 Este número é o mesmo do WhatsApp</label>
+          </div>
+          
+          <div id="whatsappField" class="whatsapp-field">
+            <div class="form-group">
+              <label>Número do WhatsApp <span class="obrigatorio">*</span></label>
+              <input type="tel" id="formWhatsapp" placeholder="(00) 00000-0000">
+            </div>
+          </div>
+          
+          <!-- Meio de contato preferido (padrão WhatsApp) -->
+          <div class="contato-preferencia">
+            <label>📞 Meio de contato preferido <span class="obrigatorio">*</span></label>
+            <select id="contatoPreferido" required>
+              <option value="WhatsApp">💬 WhatsApp</option>
+              <option value="E-mail">📧 E-mail</option>
+              <option value="Ligação">📞 Ligação telefônica</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Resumo da sua demanda <span class="obrigatorio">*</span></label>
+            <textarea id="formDemanda" rows="5" placeholder="Descreva resumidamente sua situação ou dúvida..." required></textarea>
+          </div>
+          
+          <div class="urgente-checkbox">
+            <input type="checkbox" id="formUrgente">
+            <label for="formUrgente">🚨 URGENTE - Preciso de resposta em até 3h</label>
+            <small>(caso de emergência judicial)</small>
+          </div>
+          
+          <div class="email-copy">
+            <input type="email" id="emailCopia" placeholder="E-mail para receber cópia (opcional)">
+            <button type="button" id="btnEnviarCopia" class="btn-secondary" style="padding: 12px 20px;">📧 Enviar cópia</button>
+          </div>
+          
+          <div id="resumoEnvio" style="display: none;" class="resumo-box"></div>
+          
+          <button type="submit" class="btn" style="width: 100%;">📨 Enviar solicitação</button>
+          
+          <div id="prazoInfo" class="prazo-info">
+            ⏱️ Solicitações normais: resposta em até 24h úteis
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRÍCULO -->
+  <section class="curriculo-section" id="curriculo">
+    <div class="container">
+      <div class="section-title">
+        <span>Trajetória</span>
+        <h2>Currículo profissional</h2>
+        <p>Advogado OAB/MG 207.091 • Especialista em Gestão Pública</p>
+      </div>
+      <div class="curriculo-grid">
+        <div class="curriculo-col">
+          <div class="curriculo-card resumo-card">
+            <div class="card-header">📌 RESUMO PROFISSIONAL</div>
+            <p>Advogado com experiência nas áreas criminal, administrativa e gestão pública, com atuação no sistema de justiça criminal, contratos administrativos, licitações e atendimento ao público em contexto de vulnerabilidade social. Experiência na 2ª Vara Criminal de Betim/MG, incluindo acompanhamento de processos de réus presos, réus soltos e demandas relacionadas à violência doméstica e familiar contra a mulher (Lei nº 11.340/2006).<br><br>Especialista em Gestão Pública (MBA), com atuação em elaboração de relatórios qualitativos e quantitativos, monitoramento de indicadores (KPIs), gestão de dados, articulação institucional, acompanhamento de demandas sociais e encaminhamentos administrativos. Perfil analítico, com experiência em atendimento humanizado, mediação de conflitos, organização de fluxos e produção de documentos técnicos.</p>
+          </div>
+          <div class="curriculo-card">
+            <div class="card-header">🎓 FORMAÇÃO ACADÊMICA</div>
+            <div class="curriculo-item"><span class="item-year">2022</span><div><div class="item-profissao">Pós-graduação em Direito Tributário</div><div class="item-empresa">Damásio Educacional / Ibmec-SP</div></div></div>
+            <div class="curriculo-item"><span class="item-year">2021</span><div><div class="item-profissao">MBA em Gestão Pública</div><div class="item-empresa">Universidade Pitágoras Unopar Anhanguera</div></div></div>
+            <div class="curriculo-item"><span class="item-year">2019</span><div><div class="item-profissao">Bacharelado em Direito</div><div class="item-empresa">Centro Universitário UNA</div></div></div>
+          </div>
+          <div class="curriculo-card">
+            <div class="card-header">💼 EXPERIÊNCIA PROFISSIONAL</div>
+            <div class="curriculo-item"><span class="item-year">Jul/2024 → Atual</span><div><div class="item-profissao">Advogado Autônomo | Sócio-Administrador</div><div class="item-empresa">Advocacia Privada</div><span class="item-desc">Atendimento direto ao público, orientação jurídica, mediação de conflitos, elaboração de pareceres e peças processuais, gestão de dados e controle de fluxos.</span></div></div>
+            <div class="curriculo-item"><span class="item-year">Set/2025 → Dez/2025</span><div><div class="item-profissao">Assessor – RAA 18</div><div class="item-empresa">MGS – Secretaria Municipal de Compras e Licitações - Betim</div><span class="item-desc">Assessoramento à Secretária Municipal, suporte técnico-administrativo, elaboração de relatórios, gestão de dados e apoio em licitações (Lei 14.133/2021).</span></div></div>
+            <div class="curriculo-item"><span class="item-year">Jun/2025 → Ago/2025</span><div><div class="item-profissao">Assessor IX</div><div class="item-empresa">MGS - Betim</div><span class="item-desc">Triagem de demandas administrativas, atendimento institucional, suporte à gestão de licitações e contratos.</span></div></div>
+            <div class="curriculo-item"><span class="item-year">Set/2022 → Jun/2024</span><div><div class="item-profissao">Consultor Jurídico</div><div class="item-empresa">PlanSul - 2ª Vara Criminal de Betim/MG | TJMG</div><span class="item-desc">Assessoramento em processos criminais (réus presos/soltos, Lei Maria da Penha), elaboração de relatórios e controle de dados processuais.</span></div></div>
+            <div class="curriculo-item"><span class="item-year">Set/2021 → Nov/2022</span><div><div class="item-profissao">Supervisor de Gabinete I</div><div class="item-empresa">Prefeitura de Betim</div><span class="item-desc">Coordenação administrativa, monitoramento de KPIs, relatórios gerenciais, articulação institucional.</span></div></div>
+            <div class="curriculo-item"><span class="item-year">Abr/2020 → Ago/2021</span><div><div class="item-profissao">Estagiário de Pós-Graduação</div><div class="item-empresa">Prefeitura de Betim - Compras e Licitações</div><span class="item-desc">Atuação em processos licitatórios, gestão de contratos, elaboração de minutas e relatórios técnicos.</span></div></div>
+            <div class="curriculo-item"><span class="item-year">Jan/2018 → Dez/2019</span><div><div class="item-profissao">Estagiário de Graduação</div><div class="item-empresa">TJMG - 2ª Vara Criminal de Betim</div><span class="item-desc">Atendimento ao público vulnerável, apoio em processos criminais e violência doméstica, organização processual.</span></div></div>
+            <div class="curriculo-item"><span class="item-year">Fev/2017 → Ago/2017</span><div><div class="item-profissao">Estagiário de Graduação</div><div class="item-empresa">TRE/MG</div><span class="item-desc">Atendimento ao público em procedimentos eleitorais, operação de sistemas e análise documental.</span></div></div>
+            <div class="curriculo-item"><span class="item-year">Jan/2016 → Fev/2017</span><div><div class="item-profissao">Estagiário de Graduação</div><div class="item-empresa">PGM/BH</div><span class="item-desc">Apoio em processos de execução fiscal, organização documental e pesquisas jurídicas.</span></div></div>
           </div>
         </div>
-        
-        <!-- Meio de contato preferido (padrão WhatsApp) -->
-        <div class="contato-preferencia">
-          <label>📞 Meio de contato preferido <span class="obrigatorio">*</span></label>
-          <select id="contatoPreferido" required>
-            <option value="WhatsApp">💬 WhatsApp</option>
-            <option value="E-mail">📧 E-mail</option>
-            <option value="Ligação">📞 Ligação telefônica</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label>Resumo da sua demanda <span class="obrigatorio">*</span></label>
-          <textarea id="formDemanda" rows="5" placeholder="Descreva resumidamente sua situação ou dúvida..." required></textarea>
-        </div>
-        
-        <div class="urgente-checkbox">
-          <input type="checkbox" id="formUrgente">
-          <label for="formUrgente">🚨 URGENTE - Preciso de resposta em até 3h</label>
-          <small>(caso de emergência judicial)</small>
-        </div>
-        
-        <div class="email-copy">
-          <input type="email" id="emailCopia" placeholder="E-mail para receber cópia (opcional)">
-          <button type="button" id="btnEnviarCopia" class="btn-secondary" style="padding: 12px 20px;">📧 Enviar cópia</button>
-        </div>
-        
-        <div id="resumoEnvio" style="display: none;" class="resumo-box"></div>
-        
-        <button type="submit" class="btn" style="width: 100%;">📨 Enviar solicitação</button>
-        
-        <div id="prazoInfo" class="prazo-info">
-          ⏱️ Solicitações normais: resposta em até 24h úteis
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- CURRÍCULO -->
-<section class="curriculo-section" id="curriculo">
-  <div class="container">
-    <div class="section-title">
-      <span>Trajetória</span>
-      <h2>Currículo profissional</h2>
-      <p>Advogado OAB/MG 207.091 • Especialista em Gestão Pública</p>
-    </div>
-    <div class="curriculo-grid">
-      <div class="curriculo-col">
-        <div class="curriculo-card resumo-card">
-          <div class="card-header">📌 RESUMO PROFISSIONAL</div>
-          <p>Advogado com experiência nas áreas criminal, administrativa e gestão pública, com atuação no sistema de justiça criminal, contratos administrativos, licitações e atendimento ao público em contexto de vulnerabilidade social. Experiência na 2ª Vara Criminal de Betim/MG, incluindo acompanhamento de processos de réus presos, réus soltos e demandas relacionadas à violência doméstica e familiar contra a mulher (Lei nº 11.340/2006).<br><br>Especialista em Gestão Pública (MBA), com atuação em elaboração de relatórios qualitativos e quantitativos, monitoramento de indicadores (KPIs), gestão de dados, articulação institucional, acompanhamento de demandas sociais e encaminhamentos administrativos. Perfil analítico, com experiência em atendimento humanizado, mediação de conflitos, organização de fluxos e produção de documentos técnicos.</p>
-        </div>
-        <div class="curriculo-card">
-          <div class="card-header">🎓 FORMAÇÃO ACADÊMICA</div>
-          <div class="curriculo-item"><span class="item-year">2022</span><div><div class="item-profissao">Pós-graduação em Direito Tributário</div><div class="item-empresa">Damásio Educacional / Ibmec-SP</div></div></div>
-          <div class="curriculo-item"><span class="item-year">2021</span><div><div class="item-profissao">MBA em Gestão Pública</div><div class="item-empresa">Universidade Pitágoras Unopar Anhanguera</div></div></div>
-          <div class="curriculo-item"><span class="item-year">2019</span><div><div class="item-profissao">Bacharelado em Direito</div><div class="item-empresa">Centro Universitário UNA</div></div></div>
-        </div>
-        <div class="curriculo-card">
-          <div class="card-header">💼 EXPERIÊNCIA PROFISSIONAL</div>
-          <div class="curriculo-item"><span class="item-year">Jul/2024 → Atual</span><div><div class="item-profissao">Advogado Autônomo | Sócio-Administrador</div><div class="item-empresa">Advocacia Privada</div><span class="item-desc">Atendimento direto ao público, orientação jurídica, mediação de conflitos, elaboração de pareceres e peças processuais, gestão de dados e controle de fluxos.</span></div></div>
-          <div class="curriculo-item"><span class="item-year">Set/2025 → Dez/2025</span><div><div class="item-profissao">Assessor – RAA 18</div><div class="item-empresa">MGS – Secretaria Municipal de Compras e Licitações - Betim</div><span class="item-desc">Assessoramento à Secretária Municipal, suporte técnico-administrativo, elaboração de relatórios, gestão de dados e apoio em licitações (Lei 14.133/2021).</span></div></div>
-          <div class="curriculo-item"><span class="item-year">Jun/2025 → Ago/2025</span><div><div class="item-profissao">Assessor IX</div><div class="item-empresa">MGS - Betim</div><span class="item-desc">Triagem de demandas administrativas, atendimento institucional, suporte à gestão de licitações e contratos.</span></div></div>
-          <div class="curriculo-item"><span class="item-year">Set/2022 → Jun/2024</span><div><div class="item-profissao">Consultor Jurídico</div><div class="item-empresa">PlanSul - 2ª Vara Criminal de Betim/MG | TJMG</div><span class="item-desc">Assessoramento em processos criminais (réus presos/soltos, Lei Maria da Penha), elaboração de relatórios e controle de dados processuais.</span></div></div>
-          <div class="curriculo-item"><span class="item-year">Set/2021 → Nov/2022</span><div><div class="item-profissao">Supervisor de Gabinete I</div><div class="item-empresa">Prefeitura de Betim</div><span class="item-desc">Coordenação administrativa, monitoramento de KPIs, relatórios gerenciais, articulação institucional.</span></div></div>
-          <div class="curriculo-item"><span class="item-year">Abr/2020 → Ago/2021</span><div><div class="item-profissao">Estagiário de Pós-Graduação</div><div class="item-empresa">Prefeitura de Betim - Compras e Licitações</div><span class="item-desc">Atuação em processos licitatórios, gestão de contratos, elaboração de minutas e relatórios técnicos.</span></div></div>
-          <div class="curriculo-item"><span class="item-year">Jan/2018 → Dez/2019</span><div><div class="item-profissao">Estagiário de Graduação</div><div class="item-empresa">TJMG - 2ª Vara Criminal de Betim</div><span class="item-desc">Atendimento ao público vulnerável, apoio em processos criminais e violência doméstica, organização processual.</span></div></div>
-          <div class="curriculo-item"><span class="item-year">Fev/2017 → Ago/2017</span><div><div class="item-profissao">Estagiário de Graduação</div><div class="item-empresa">TRE/MG</div><span class="item-desc">Atendimento ao público em procedimentos eleitorais, operação de sistemas e análise documental.</span></div></div>
-          <div class="curriculo-item"><span class="item-year">Jan/2016 → Fev/2017</span><div><div class="item-profissao">Estagiário de Graduação</div><div class="item-empresa">PGM/BH</div><span class="item-desc">Apoio em processos de execução fiscal, organização documental e pesquisas jurídicas.</span></div></div>
-        </div>
-      </div>
-      <div class="curriculo-col">
-        <div class="curriculo-card">
-          <div class="card-header">⚙️ COMPETÊNCIAS</div>
-          <div class="competencias-grid">
-            <div class="competencia-item">📊 Atendimento ao público e escuta qualificada<span class="tooltip">Atendimento humanizado em contextos de vulnerabilidade</span></div>
-            <div class="competencia-item">📈 Elaboração de relatórios técnicos<span class="tooltip">Documentos qualitativos e quantitativos</span></div>
-            <div class="competencia-item">📊 Gestão de dados e KPIs<span class="tooltip">Monitoramento de indicadores e planilhas</span></div>
-            <div class="competencia-item">🧠 Excel intermediário<span class="tooltip">Organização de planilhas administrativas</span></div>
-            <div class="competencia-item">🤝 Gestão de conflitos e inteligência emocional<span class="tooltip">Mediação e resolução de litígios</span></div>
-            <div class="competencia-item">🌱 Atendimento humanizado em vulnerabilidade social<span class="tooltip">Contexto do sistema criminal</span></div>
-            <div class="competencia-item">⚖️ Processos criminais e violência doméstica<span class="tooltip">Lei Maria da Penha (Lei nº 11.340/2006)</span></div>
-            <div class="competencia-item">📜 Licitações e contratos administrativos<span class="tooltip">Lei nº 14.133/2021</span></div>
-            <div class="competencia-item">🏛️ Articulação institucional<span class="tooltip">Encaminhamento de demandas</span></div>
-            <div class="competencia-item">📝 Produção de documentos técnicos e pareceres<span class="tooltip">Peças processuais e relatórios</span></div>
+        <div class="curriculo-col">
+          <div class="curriculo-card">
+            <div class="card-header">⚙️ COMPETÊNCIAS</div>
+            <div class="competencias-grid">
+              <div class="competencia-item">📊 Atendimento ao público e escuta qualificada<span class="tooltip">Atendimento humanizado em contextos de vulnerabilidade</span></div>
+              <div class="competencia-item">📈 Elaboração de relatórios técnicos<span class="tooltip">Documentos qualitativos e quantitativos</span></div>
+              <div class="competencia-item">📊 Gestão de dados e KPIs<span class="tooltip">Monitoramento de indicadores e planilhas</span></div>
+              <div class="competencia-item">🧠 Excel intermediário<span class="tooltip">Organização de planilhas administrativas</span></div>
+              <div class="competencia-item">🤝 Gestão de conflitos e inteligência emocional<span class="tooltip">Mediação e resolução de litígios</span></div>
+              <div class="competencia-item">🌱 Atendimento humanizado em vulnerabilidade social<span class="tooltip">Contexto do sistema criminal</span></div>
+              <div class="competencia-item">⚖️ Processos criminais e violência doméstica<span class="tooltip">Lei Maria da Penha (Lei nº 11.340/2006)</span></div>
+              <div class="competencia-item">📜 Licitações e contratos administrativos<span class="tooltip">Lei nº 14.133/2021</span></div>
+              <div class="competencia-item">🏛️ Articulação institucional<span class="tooltip">Encaminhamento de demandas</span></div>
+              <div class="competencia-item">📝 Produção de documentos técnicos e pareceres<span class="tooltip">Peças processuais e relatórios</span></div>
+            </div>
+          </div>
+          <div class="curriculo-card">
+            <div class="card-header">📜 CERTIFICAÇÕES & CURSOS</div>
+            <div class="certs-grid">
+              <span class="cert-tag">Gestão de Gabinete – PUCRS (2023)</span>
+              <span class="cert-tag">Argumentação Jurídica – FGV (2022)</span>
+              <span class="cert-tag">Inteligência Emocional – Conquer (2022)</span>
+              <span class="cert-tag">10 Anos do CREPOP – CRP/MG (2021)</span>
+              <span class="cert-tag">MS Excel Básico/Intermediário – Fundação Bradesco (2021)</span>
+              <span class="cert-tag">Direito Constitucional – ILB (2021)</span>
+              <span class="cert-tag">Brigadista Orgânico – CBMMG (2021)</span>
+              <span class="cert-tag">Novo Acordo Ortográfico – ILB (2020)</span>
+              <span class="cert-tag">Prestação de Contas Eleitorais – TSE (2017)</span>
+            </div>
+          </div>
+          <div class="curriculo-card">
+            <div class="card-header">📄 PRODUÇÃO ACADÊMICA</div>
+            <div class="academico-item"><span class="academico-ano">2012</span><span>Pesquisa científica: "Inclusão de Egressos do Sistema Penitenciário Brasileiro nas Empresas da Região Metropolitana de Belo Horizonte"</span></div>
+            <div class="academico-item"><span class="academico-ano">2017-2018</span><span>Iniciação Científica: "Apenas negócios?": o Brasil e a implementação dos Princípios da ONU sobre Empresas e Direitos Humanos</span></div>
+            <div class="academico-item"><span class="academico-ano">2017</span><span>Apresentação na I Jornada UNA de Iniciação Científica e Extensão – JUICE</span></div>
+            <div class="academico-item"><span class="academico-ano">2015</span><span>Representante de Turma – Curso de Direito</span></div>
           </div>
         </div>
-        <div class="curriculo-card">
-          <div class="card-header">📜 CERTIFICAÇÕES & CURSOS</div>
-          <div class="certs-grid">
-            <span class="cert-tag">Gestão de Gabinete – PUCRS (2023)</span>
-            <span class="cert-tag">Argumentação Jurídica – FGV (2022)</span>
-            <span class="cert-tag">Inteligência Emocional – Conquer (2022)</span>
-            <span class="cert-tag">10 Anos do CREPOP – CRP/MG (2021)</span>
-            <span class="cert-tag">MS Excel Básico/Intermediário – Fundação Bradesco (2021)</span>
-            <span class="cert-tag">Direito Constitucional – ILB (2021)</span>
-            <span class="cert-tag">Brigadista Orgânico – CBMMG (2021)</span>
-            <span class="cert-tag">Novo Acordo Ortográfico – ILB (2020)</span>
-            <span class="cert-tag">Prestação de Contas Eleitorais – TSE (2017)</span>
-          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PODCAST -->
+  <section class="podcast" id="podcast">
+    <div class="container podcast-grid">
+      <div class="podcast-image"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgupWdfjLftEEJGiGD53aFjh7FEAa_vhBqeKfHguMWjPmIVwGVH1SdWA88dIA2WjJprObt3YkjgFH2auMJNixOW6ZTposuFhaobWh-WubXlOHOPkY1I8wWiYo0wc6baQkGs0iX5LE6g1TunwKnFjjcabmMCUfQETcSH9yXf9Ps85tnxxcPvFjIDjYOUM6wG/s1600/New%20Project.png" alt="Podcast Xicrinha"></div>
+      <div><div class="section-title"><span>NO AR • ON AIR</span><h2>XICRINHA COM DIREITO — <span style="color:var(--primary)">conhecer é poder!</span></h2></div><div class="episodes"><div class="episode"><small>EP #01</small><h4>O Direito precisa ser acessível?</h4><p>A linguagem técnica e as instituições públicas.</p></div><div class="episode"><small>EP #02</small><h4>IA, advocacia e transformação digital</h4><p>Impacto da inteligência artificial na advocacia.</p></div><div class="episode"><small>EP #03</small><h4>Democracia, comunicação e poder</h4><p>Informação pública na construção democrática.</p></div></div></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background: var(--bg-secondary); padding: 80px 0;" id="faq">
+    <div class="container">
+      <div class="section-title" style="text-align: center; margin: 0 auto 50px auto;">
+        <span>Dúvidas frequentes</span>
+        <h2>O que você precisa saber</h2>
+        <p>Informações de caráter educativo e institucional</p>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px;">
+        <button class="faq-filter-btn active" data-filter="all">📌 Todas as Perguntas</button>
+        <button class="faq-filter-btn" data-filter="Comercial">💰 Honorários e Valores</button>
+        <button class="faq-filter-btn" data-filter="Transacional">⚡ Atendimento Imediato</button>
+        <button class="faq-filter-btn" data-filter="Informacional">📚 Como funciona / Direitos</button>
+      </div>
+      <div class="faq-grid" id="faq-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 24px; margin-bottom: 60px;"></div>
+    </div>
+  </section>
+
+  <!-- LINKS ÚTEIS -->
+  <section style="padding: 40px 0; background: var(--bg);">
+    <div class="container">
+      <div class="section-title"><span>Transparência & Cidadania</span><h2>Links de interesse público</h2><p>Acesso direto a informações oficiais</p></div>
+      <div class="links-uteis-grid">
+        <div class="link-card"><a href="https://www.oabmg.org.br/" target="_blank" rel="noopener noreferrer">⚖ OAB/MG - Site Oficial</a></div>
+        <div class="link-card"><a href="https://www.oabmg.org.br/servicos/consulta-de-advogados" target="_blank" rel="noopener noreferrer">📋 Consulta de Inscrição OAB</a></div>
+        <div class="link-card"><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer">🔒 LGPD - Lei Geral de Proteção de Dados</a></div>
+        <div class="link-card"><a href="https://www.oab.org.br/etica-e-disciplina" target="_blank" rel="noopener noreferrer">📜 Código de Ética da OAB</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO PRINCIPAL com todas as redes e ícones padronizados -->
+  <section class="contato-principal" id="contato-principal">
+    <div class="container">
+      <h2>Entre em contato</h2>
+      <div class="sub">Atendimento personalizado e sigiloso</div>
+      <div class="canais-grid">
+        <div class="canal-card">
+          <div class="icon-standard"><img src="https://raw.githubusercontent.com/lucassmmendes/lucassmmendes.github.io/main/logo_instagram.png" alt="Instagram" loading="lazy"></div>
+          <h4>Instagram</h4>
+          <p>@llucas.monteiro</p>
+          <a href="https://www.instagram.com/llucas.monteiro/" target="_blank" rel="noopener noreferrer">Seguir →</a>
         </div>
-        <div class="curriculo-card">
-          <div class="card-header">📄 PRODUÇÃO ACADÊMICA</div>
-          <div class="academico-item"><span class="academico-ano">2012</span><span>Pesquisa científica: "Inclusão de Egressos do Sistema Penitenciário Brasileiro nas Empresas da Região Metropolitana de Belo Horizonte"</span></div>
-          <div class="academico-item"><span class="academico-ano">2017-2018</span><span>Iniciação Científica: "Apenas negócios?": o Brasil e a implementação dos Princípios da ONU sobre Empresas e Direitos Humanos</span></div>
-          <div class="academico-item"><span class="academico-ano">2017</span><span>Apresentação na I Jornada UNA de Iniciação Científica e Extensão – JUICE</span></div>
-          <div class="academico-item"><span class="academico-ano">2015</span><span>Representante de Turma – Curso de Direito</span></div>
+        <div class="canal-card">
+          <div class="icon-standard"><img src="https://raw.githubusercontent.com/lucassmmendes/lucassmmendes.github.io/main/logo_threads.png" alt="Threads" loading="lazy"></div>
+          <h4>Threads</h4>
+          <p>@llucas.monteiro</p>
+          <a href="https://www.threads.com/@llucas.monteiro" target="_blank" rel="noopener noreferrer">Seguir →</a>
+        </div>
+        <div class="canal-card">
+          <div class="icon-standard"><img src="https://raw.githubusercontent.com/lucassmmendes/lucassmmendes.github.io/main/logo_whtasapp.png" alt="WhatsApp" loading="lazy"></div>
+          <h4>WhatsApp</h4>
+          <p>Atendimento rápido</p>
+          <a href="https://wa.me/5531991528642" target="_blank" rel="noopener noreferrer">(31) 99152-8642 →</a>
+        </div>
+        <div class="canal-card">
+          <div class="icon-standard"><img src="https://raw.githubusercontent.com/lucassmmendes/lucassmmendes.github.io/main/logo_telegram.png" alt="Telegram" loading="lazy"></div>
+          <h4>Telegram</h4>
+          <p>Atendimento rápido</p>
+          <a href="https://t.me/+5531991528642" target="_blank" rel="noopener noreferrer">(31) 99152-8642 →</a>
+        </div>
+        <div class="canal-card">
+          <div class="icon-standard"><img src="https://raw.githubusercontent.com/lucassmmendes/lucassmmendes.github.io/main/logo_call.png" alt="Ligação" loading="lazy"></div>
+          <h4>Ligação</h4>
+          <p>Atendimento direto</p>
+          <a href="tel:+5531991528642" rel="noopener noreferrer">(31) 99152-8642 →</a>
+        </div>
+        <div class="canal-card">
+          <div class="icon-standard"><span>📬</span></div>
+          <h4>E-mail</h4>
+          <p>Gmail / Outlook</p>
+          <a href="mailto:lucasmonteiromendes@gmail.com">lucasmonteiromendes@gmail.com</a><br>
+          <a href="mailto:lucasmonteiromendes@outlook.com">lucasmonteiromendes@outlook.com</a>
+        </div>
+        <div class="canal-card">
+          <div class="icon-standard"><span>🔗</span></div>
+          <h4>LinkedIn</h4>
+          <p>Perfil profissional</p>
+          <a href="https://www.linkedin.com/in/lucasmmendesadv/" target="_blank" rel="noopener noreferrer">Conectar →</a>
+        </div>
+        <div class="canal-card">
+          <div class="icon-standard"><span>📄</span></div>
+          <h4>Lattes</h4>
+          <p>Currículo acadêmico</p>
+          <a href="http://lattes.cnpq.br/8188357859911814" target="_blank" rel="noopener noreferrer">Visualizar →</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- PODCAST -->
-<section class="podcast" id="podcast">
-  <div class="container podcast-grid">
-    <div class="podcast-image"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgupWdfjLftEEJGiGD53aFjh7FEAa_vhBqeKfHguMWjPmIVwGVH1SdWA88dIA2WjJprObt3YkjgFH2auMJNixOW6ZTposuFhaobWh-WubXlOHOPkY1I8wWiYo0wc6baQkGs0iX5LE6g1TunwKnFjjcabmMCUfQETcSH9yXf9Ps85tnxxcPvFjIDjYOUM6wG/s1600/New%20Project.png" alt="Podcast Xicrinha"></div>
-    <div><div class="section-title"><span>NO AR • ON AIR</span><h2>XICRINHA COM DIREITO — <span style="color:var(--primary)">conhecer é poder!</span></h2></div><div class="episodes"><div class="episode"><small>EP #01</small><h4>O Direito precisa ser acessível?</h4><p>A linguagem técnica e as instituições públicas.</p></div><div class="episode"><small>EP #02</small><h4>IA, advocacia e transformação digital</h4><p>Impacto da inteligência artificial na advocacia.</p></div><div class="episode"><small>EP #03</small><h4>Democracia, comunicação e poder</h4><p>Informação pública na construção democrática.</p></div></div></div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section style="background: var(--bg-secondary); padding: 80px 0;" id="faq">
-  <div class="container">
-    <div class="section-title" style="text-align: center; margin: 0 auto 50px auto;">
-      <span>Dúvidas frequentes</span>
-      <h2>O que você precisa saber</h2>
-      <p>Informações de caráter educativo e institucional</p>
-    </div>
-    <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px;">
-      <button class="faq-filter-btn active" data-filter="all">📌 Todas as Perguntas</button>
-      <button class="faq-filter-btn" data-filter="Comercial">💰 Honorários e Valores</button>
-      <button class="faq-filter-btn" data-filter="Transacional">⚡ Atendimento Imediato</button>
-      <button class="faq-filter-btn" data-filter="Informacional">📚 Como funciona / Direitos</button>
-    </div>
-    <div class="faq-grid" id="faq-container" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 24px; margin-bottom: 60px;"></div>
-  </div>
-</section>
-
-<!-- LINKS ÚTEIS -->
-<section style="padding: 40px 0; background: var(--bg);">
-  <div class="container">
-    <div class="section-title"><span>Transparência & Cidadania</span><h2>Links de interesse público</h2><p>Acesso direto a informações oficiais</p></div>
-    <div class="links-uteis-grid">
-      <div class="link-card"><a href="https://www.oabmg.org.br/" target="_blank" rel="noopener noreferrer">⚖ OAB/MG - Site Oficial</a></div>
-      <div class="link-card"><a href="https://www.oabmg.org.br/servicos/consulta-de-advogados" target="_blank" rel="noopener noreferrer">📋 Consulta de Inscrição OAB</a></div>
-      <div class="link-card"><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" target="_blank" rel="noopener noreferrer">🔒 LGPD - Lei Geral de Proteção de Dados</a></div>
-      <div class="link-card"><a href="https://www.oab.org.br/etica-e-disciplina" target="_blank" rel="noopener noreferrer">📜 Código de Ética da OAB</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTATO PRINCIPAL com todas as redes e ícones padronizados -->
-<section class="contato-principal" id="contato-principal">
-  <div class="container">
-    <h2>Entre em contato</h2>
-    <div class="sub">Atendimento personalizado e sigiloso</div>
-    <div class="canais-grid">
-      <div class="canal-card">
-        <div class="icon-standard"><img src="https://raw.githubusercontent.com/lucassmmendes/lucassmmendes.github.io/main/logo_instagram.png" alt="Instagram" loading="lazy"></div>
-        <h4>Instagram</h4>
-        <p>@llucas.monteiro</p>
-        <a href="https://www.instagram.com/llucas.monteiro/" target="_blank" rel="noopener noreferrer">Seguir →</a>
-      </div>
-      <div class="canal-card">
-        <div class="icon-standard"><img src="https://raw.githubusercontent.com/lucassmmendes/lucassmmendes.github.io/main/logo_threads.png" alt="Threads" loading="lazy"></div>
-        <h4>Threads</h4>
-        <p>@llucas.monteiro</p>
-        <a href="https://www.threads.com/@llucas.monteiro" target="_blank" rel="noopener noreferrer">Seguir →</a>
-      </div>
-      <div class="canal-card">
-        <div class="icon-standard"><img src="https://raw.githubusercontent.com/lucassmmendes/lucassmmendes.github.io/main/logo_whtasapp.png" alt="WhatsApp" loading="lazy"></div>
-        <h4>WhatsApp</h4>
-        <p>Atendimento rápido</p>
-        <a href="https://wa.me/5531991528642" target="_blank" rel="noopener noreferrer">(31) 99152-8642 →</a>
-      </div>
-      <div class="canal-card">
-        <div class="icon-standard"><img src="https://raw.githubusercontent.com/lucassmmendes/lucassmmendes.github.io/main/logo_telegram.png" alt="Telegram" loading="lazy"></div>
-        <h4>Telegram</h4>
-        <p>Atendimento rápido</p>
-        <a href="https://t.me/+5531991528642" target="_blank" rel="noopener noreferrer">(31) 99152-8642 →</a>
-      </div>
-      <div class="canal-card">
-        <div class="icon-standard"><img src="https://raw.githubusercontent.com/lucassmmendes/lucassmmendes.github.io/main/logo_call.png" alt="Ligação" loading="lazy"></div>
-        <h4>Ligação</h4>
-        <p>Atendimento direto</p>
-        <a href="tel:+5531991528642" rel="noopener noreferrer">(31) 99152-8642 →</a>
-      </div>
-      <div class="canal-card">
-        <div class="icon-standard"><span>📬</span></div>
-        <h4>E-mail</h4>
-        <p>Gmail / Outlook</p>
-        <a href="mailto:lucasmonteiromendes@gmail.com">lucasmonteiromendes@gmail.com</a><br>
-        <a href="mailto:lucasmonteiromendes@outlook.com">lucasmonteiromendes@outlook.com</a>
-      </div>
-      <div class="canal-card">
-        <div class="icon-standard"><span>🔗</span></div>
-        <h4>LinkedIn</h4>
-        <p>Perfil profissional</p>
-        <a href="https://www.linkedin.com/in/lucasmmendesadv/" target="_blank" rel="noopener noreferrer">Conectar →</a>
-      </div>
-      <div class="canal-card">
-        <div class="icon-standard"><span>📄</span></div>
-        <h4>Lattes</h4>
-        <p>Currículo acadêmico</p>
-        <a href="http://lattes.cnpq.br/8188357859911814" target="_blank" rel="noopener noreferrer">Visualizar →</a>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
   <div class="container">
@@ -1492,6 +1534,18 @@
     </div>
   </div>
 </footer>
+
+<!-- ========== VLIBRAS WIDGET (ÍCONE OFICIAL DAS DUAS MÃOS AZUIS) ========== -->
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
 
 <script>
   // ============================================================
@@ -1771,3 +1825,4 @@
 </script>
 </body>
 </html>
+```
